@@ -35,20 +35,20 @@
             </ul>
         </li>
         <li>
-            <a href="campaing.php">
+            <a href="{{ route('admin_campaign') }}">
                 <div class="parent-icon"><i class='bx bx-cookie'></i></div>
                 <div class="menu-title">Campañas</div>
             </a>
         </li>
         <li class="menu-label">Organización</li>
         <li>
-            <a href="media.php">
+            <a href="{{ route("admin_media") }}">
                 <div class="parent-icon"><i class='bx bx-folder'></i></div>
                 <div class="menu-title">Medios</div>
             </a>
         </li>
         <li>
-            <a href="calendar.php">
+            <a href="{{ route("admin_calendar") }}">
                 <div class="parent-icon"><i class="bx bx-calendar-week"></i></div>
                 <div class="menu-title">Calendario</div>
             </a>

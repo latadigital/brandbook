@@ -192,4 +192,16 @@ class AdminController extends Controller
 
         return redirect()->route('admin_user_edit', [$roleID, $user->id]);
     }
+
+    public function campaign() {
+        return view("admin.campaign.campaign");
+    }
+
+    public function media() {
+        return view("admin.media.media");
+    }
+
+    public function calendar() {
+        return view("admin.calendar.calendar");
+    }
 }

@@ -33,5 +33,20 @@ Route::group(['prefix' => 'administrator'], function() {
             Route::get('/edit/{roleID}/{id}', 'AdminController@editUser')->name('admin_user_edit');
             Route::put('/edit/{roleID}/{id}', 'AdminController@editUserPut')->name('admin_user_edit_put');
         });
+
+        // Campaigns
+        Route::group(['prefix' => 'campaign'], function() {
+            Route::get('/', 'AdminController@campaign')->name('admin_campaign');
+        });
+
+        // Media
+        Route::group(['prefix' => 'media'], function() {
+            Route::get('/', 'AdminController@media')->name('admin_media');
+        });
+
+        // Calendar
+        Route::group(['prefix' => 'calendar'], function() {
+            Route::get('/', 'AdminController@calendar')->name('admin_calendar');
+        });
     });
 });
