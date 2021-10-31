@@ -27,7 +27,8 @@ class AdminController extends Controller
     public function loginValidate(LoginRequest $req) {
         $email = $req->input("email");
         $password = $req->input("password");
-        if (!Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])) {
+        $remember = $req->has("remember") ? true : false;
+        if (!Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1], $remember)) {
             return redirect()->route('admin_login')->with('message', 'Email y/o password son inválidos');
         }
         $redirect = 'front_home';
