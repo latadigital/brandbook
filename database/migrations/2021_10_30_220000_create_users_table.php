@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
             $table->string('lastname');
             $table->string('position');
             $table->string('email')->unique();
@@ -24,7 +24,9 @@ class CreateUsersTable extends Migration
             $table->foreign('business_id')->references('id')->on('business');
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('role');
+            $table->boolean('active')->default(false);
             $table->rememberToken();
+            $table->datetime('deleted_at')->nullable();
             $table->timestamps();
         });
     }

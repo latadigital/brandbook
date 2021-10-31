@@ -48,7 +48,7 @@
                                 <div class="col-6">
                                     <label for="position" class="form-label">Cargo</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-microphone'></i></span>
-                                        <input type="text" class="form-control border-start-0" id="position" name="position" placeholder="Web Designer" value="{{ old('lastname') }}" />
+                                        <input type="text" class="form-control border-start-0" id="position" name="position" placeholder="Web Designer" value="{{ old('position') }}" />
                                     </div>
                                     {!! $errors->first('position', '<div class="error error-block">:message</div>') !!}
                                 </div>
@@ -83,9 +83,10 @@
                                     <label for="inputLastName1" class="form-label">Empresa</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-user'></i></span>
                                         <select name="business" class="form-select" id="inputProductType">
-                                            <option value="1">Lata Digital</option>
-                                            <option value="2">Samsung</option>
-                                            <option value="3">Einhell</option>
+                                            <option value="">Seleccione</option>
+                                            @foreach($business as $bu)
+                                                <option value="{{ $bu->id }}" {{ (old('business') == $bu->id) ? "selected" : "" }}>{{ $bu->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     {!! $errors->first('business', '<div class="error error-block">:message</div>') !!}
@@ -94,15 +95,17 @@
                                     <label for="inputLastName2" class="form-label">Rol</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-user'></i></span>
                                         <select name="role" class="form-select" id="inputProductType">
-                                            <option value="1">Administrador</option>
-                                            <option value="2">Cliente</option>
+                                            <option value="">Seleccione</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role->id }}" {{ (old('role') == $role->id) ? "selected" : "" }}>{{ $role->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     {!! $errors->first('role', '<div class="error error-block">:message</div>') !!}
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck2" name="active" value="1" {{ old('active') ? 'checked' : '' }}>
                                         <label class="form-check-label" for="gridCheck2">Activar</label>
                                     </div>
                                 </div>

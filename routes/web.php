@@ -13,15 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('front.index');
 });
 
-Route::group(['prefix' => 'administrator'], function(){
-    Route::get('/login', 'AdminController@index')->name('admin_home');
+Route::group(['prefix' => 'administrator'], function() {
+    Route::get('/login', 'AdminController@login')->name('admin_home');
     Route::get('/', 'AdminController@dashboard')->name('admin_dashboard');
-    Route::get('/admin', 'AdminController@admin')->name('admin_admin');
-    Route::get('/user', 'AdminController@admin')->name('admin_user');
-    Route::get('/user/create', 'AdminController@createUser')->name('admin_user_create');
-    Route::post('/user/create', 'AdminController@createUserPost')->name('admin_user_create_post');
+
+    // Users
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('/client', 'AdminController@admin')->name('admin_user');
+        Route::get('/admin', 'AdminController@admin')->name('admin_admin');
+        Route::get('/create', 'AdminController@createUser')->name('admin_user_create');
+        Route::post('/create', 'AdminController@createUserPost')->name('admin_user_create_post');
+        Route::get('/delete/{id}', 'AdminController@deleteUser')->name('admin_user_delete');
+        Route::get('/edit/{roleID}/{id}', 'AdminController@editUser')->name('admin_user_edit');
+        Route::put('/edit/{roleID}/{id}', 'AdminController@editUserPut')->name('admin_user_edit_put');
+    });
 });

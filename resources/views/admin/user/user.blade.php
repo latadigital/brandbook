@@ -42,6 +42,7 @@
                                     <th>Empresa</th>
                                     <th>Email</th>
                                     <th>Creado</th>
+                                    <th>Modificado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -55,7 +56,7 @@
                                                         width="40" height="40" alt="">
                                                 </div>
                                                 <div class="ms-2">
-                                                    <h6 class="mb-0 font-14">{{ $user->name }} {{ $user->lastname }}</h6>
+                                                    <h6 class="mb-0 font-14">{{ $user->firstname }} {{ $user->lastname }}</h6>
                                                     <p class="mb-0 font-13 text-secondary">{{ $user->position }}</p>
                                                 </div>
                                             </div>
@@ -63,11 +64,12 @@
                                         <td>{{ $user->position }}</td>
                                         <td>{{ $user->business->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $user->created_at->diffForHumans() }}</td>
+                                        <td>{{ $user->updated_at->diffForHumans() }}</td>
                                         <td>
                                             <div class="d-flex order-actions">
-                                                <a href="user-add.php" class=""><i class="bx bxs-edit"></i></a>
-                                                <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
+                                                <a href="{{ route('admin_user_edit', [$user->role->id, $user->id]) }}" class=""><i class="bx bxs-edit"></i></a>
+                                                <a href="{{ route('admin_user_delete', $user->id) }}" class="ms-4"><i class="bx bxs-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
