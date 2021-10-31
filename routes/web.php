@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function() {
-//     return view('front.index');
-// });
-
 Route::get('/', 'FrontController@home')->name('front_home');
 
 Route::group(['prefix' => 'administrator'], function() {

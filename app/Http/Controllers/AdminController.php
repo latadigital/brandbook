@@ -28,7 +28,7 @@ class AdminController extends Controller
         $email = $req->input("email");
         $password = $req->input("password");
         $remember = $req->has("remember") ? true : false;
-        if (!Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1], $remember)) {
+        if (!Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1, 'deleted_at' => null], $remember)) {
             return redirect()->route('admin_login')->with('message', 'Email y/o password son inválidos');
         }
         $redirect = 'front_home';
@@ -47,25 +47,38 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function admin() {
+    public function admin(Request $req) {
         $roleID = CLIENT_ROLE_ID;
         if (Route::currentRouteName() == 'admin_admin') {
             $roleID = ADMIN_ROLE_ID;
         }
-        $users = User::where('role_id', $roleID)
-            ->whereNull('deleted_at')
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $search = $req->get("search");
+        $query = User::where('role_id', $roleID)->whereNull('deleted_at')->orderBy('created_at', 'desc');
+        if ($search != "") {
+            $query->where(function($query) use ($search) {
+                $query
+                    ->where("firstname", "like", "%".$search."%")
+                    ->orWhere("lastname", "like", "%".$search."%")
+                    ->orWhere("position", "like", "%".$search."%")
+                    ->orWhere("email", "like", "%".$search."%");
+            });
+        }
+        $query->orderBy('created_at', 'desc')->get();
+        $users = $query->get();
 
         $referTitle = "Clientes";
+        $routePath = "admin_user";
         if ($roleID == ADMIN_ROLE_ID) {
             $referTitle = "Administradores";
+            $routePath = "admin_admin";
         }
 
         $output = [
             "users" => $users,
             "role_id" => $roleID,
             "refer_title" => $referTitle,
+            "route_path" => $routePath,
+            "word_search" => $search,
         ];
         return view('admin.user.user', $output);
     }
