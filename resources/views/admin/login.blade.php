@@ -24,39 +24,41 @@
                                 <hr />
 
                                 <div class="form-body">
-                                    <form class="row g-3">
+                                    @if (Session::has('message'))
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                <li>{!! Session::get('message') !!}</li>
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    {{ Form::open(array('route' => 'admin_login_validate', 'class'=>'row g-3', 'method' => 'post')) }}
                                         <div class="col-12">
                                             <label for="inputEmailAddress" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="inputEmailAddress"
-                                                placeholder="Email">
+                                            <input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="Email" value="{{ old("email") }}">
+                                            {!! $errors->first('email', '<div class="error error-block">:message</div>') !!}
                                         </div>
                                         <div class="col-12">
                                             <label for="inputChoosePassword" class="form-label">Password</label>
                                             <div class="input-group" id="show_hide_password">
-                                                <input type="password" class="form-control border-end-0"
-                                                    id="inputChoosePassword" value="12345678" placeholder="Password"> <a
-                                                    href="javascript:;" class="input-group-text bg-transparent"><i
-                                                        class='bx bx-hide'></i></a>
+                                                <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="" placeholder="Password">
+                                                <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
+                                            {!! $errors->first('password', '<div class="error error-block">:message</div>') !!}
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
-                                                    checked>
-                                                <label class="form-check-label"
-                                                    for="flexSwitchCheckChecked">Recordar</label>
+                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label" for="flexSwitchCheckChecked">Recordar</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 text-end"> <a href="auth-forgot-password.php">¿Olvidaste la
-                                                contraseña?</a>
+                                        <div class="col-md-6 text-end"> <a href="auth-forgot-password.php">¿Olvidaste la contraseña?</a>
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">
-                                                <a type="submit" class="btn btn-light" href="dashboard.php"><i
-                                                        class="bx bxs-lock-open"></i>Ingresar</a>
+                                                <button type="submit" class="btn btn-light"><i class="bx bxs-lock-open"></i> Ingresar</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    {{ Form::close() }}
                                 </div>
                             </div>
                         </div>
