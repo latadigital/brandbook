@@ -37,6 +37,8 @@ Route::group(['prefix' => 'administrator'], function() {
         // Campaigns
         Route::group(['prefix' => 'campaign'], function() {
             Route::get('/', 'AdminController@campaign')->name('admin_campaign');
+            Route::get('/create', 'AdminController@createCampaign')->name('admin_campaign_create');
+            Route::get('/edit/{id}', 'AdminController@editCampaign')->name('admin_campaign_edit');
         });
 
         // Media

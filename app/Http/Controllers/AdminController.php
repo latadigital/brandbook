@@ -197,6 +197,14 @@ class AdminController extends Controller
         return view("admin.campaign.campaign");
     }
 
+    public function createCampaign() {
+        return view("admin.campaign.campaign-create");
+    }
+
+    public function editCampaign() {
+        return view("admin.campaign.campaign-edit");
+    }
+
     public function media() {
         return view("admin.media.media");
     }

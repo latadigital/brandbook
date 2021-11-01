@@ -26,7 +26,7 @@
                             <input type="text" class="form-control ps-5 radius-30" placeholder="Buscar"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
                         </div>
                         <div class="ms-auto">
-                            <a href="campaing-add.php" class="btn btn-light radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Agregar Campaña</a>
+                            <a href="{{ route("admin_campaign_create") }}" class="btn btn-light radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Agregar Campaña</a>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -63,7 +63,7 @@
                                     <td>4</td>
                                     <td>
                                         <div class="d-flex order-actions">
-                                            <a href="campaing-add.php" class=""><i class="bx bxs-edit"></i></a>
+                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
                                             <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
                                         </div>
                                     </td>
@@ -89,7 +89,7 @@
                                     <td>4</td>
                                     <td>
                                         <div class="d-flex order-actions">
-                                            <a href="campaing-add.php" class=""><i class="bx bxs-edit"></i></a>
+                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
                                             <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
                                         </div>
                                     </td>
@@ -115,7 +115,7 @@
                                     <td>4</td>
                                     <td>
                                         <div class="d-flex order-actions">
-                                            <a href="campaing-add.php" class=""><i class="bx bxs-edit"></i></a>
+                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
                                             <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
                                         </div>
                                     </td>
