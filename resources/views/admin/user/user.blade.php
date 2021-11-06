@@ -53,8 +53,12 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="">
-                                                    <img src="https://via.placeholder.com/110x110" class="rounded-circle"
-                                                        width="40" height="40" alt="">
+                                                    @if ($user->avatar)
+                                                        <img src="{{ asset('storage/avatar/'.$user->avatar) }}" class="rounded-circle" width="40" height="40" alt="">
+                                                    @else
+                                                        <img src="https://via.placeholder.com/110x110" class="rounded-circle" width="40" height="40" alt="">
+                                                    @endif
+
                                                 </div>
                                                 <div class="ms-2">
                                                     <h6 class="mb-0 font-14">{{ $user->firstname }} {{ $user->lastname }}</h6>

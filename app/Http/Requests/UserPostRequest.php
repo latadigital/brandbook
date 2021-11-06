@@ -27,11 +27,12 @@ class UserPostRequest extends FormRequest
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
             'position' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'r_password' => 'required|same:password',
             'business' => 'required|integer',
             'role' => 'required|integer',
+            'avatar' => 'mimes:jpg,jpeg,gif,png',
         ];
     }
 
@@ -45,6 +46,7 @@ class UserPostRequest extends FormRequest
             'position.required' => 'El campo cargo es requerido',
             'email.required' => 'El campo email es requerido',
             'email.email' => 'El campo email es inválido',
+            'email.unique' => 'El campo email ya existe en los registros',
             'password.required' => 'El campo password es requerido',
             'r_password.required' => 'El campo confirmar password es requerido',
             'r_password.same' => 'El campo password no coincide',
@@ -52,6 +54,7 @@ class UserPostRequest extends FormRequest
             'business.integer' => 'El campo empresa debe ser númerico',
             'role.required' => 'El campo Rol es requerido',
             'role.integer' => 'El campo Rol debe ser númerico',
+            'avatar.mimes' => 'El campo avatar debe ser JPG, JPEG, GIF, PNG',
         ];
     }
 }

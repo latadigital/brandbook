@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('position');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('avatar')->nullable();
             $table->unsignedBigInteger('business_id');
             $table->foreign('business_id')->references('id')->on('business');
             $table->unsignedBigInteger('role_id');

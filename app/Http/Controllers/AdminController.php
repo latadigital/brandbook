@@ -111,6 +111,12 @@ class AdminController extends Controller
         $roleID = $req->input("role");
         $active = $req->input("active");
 
+        $filename = "";
+        if($req->hasFile('avatar')){
+            $filename = $req->avatar->hashName();
+            $req->avatar->storeAs('avatar',$filename,'public');
+        }
+
         User::create([
             "firstname" => $firstname,
             "lastname" => $lastname,
@@ -120,6 +126,7 @@ class AdminController extends Controller
             "business_id" => $businessID,
             "role_id" => $roleID,
             "active" => $active,
+            "avatar" => $filename,
         ]);
 
         $aliasRoute = "admin_user";
@@ -180,6 +187,12 @@ class AdminController extends Controller
         $roleID = $req->input("role");
         $active = $req->input("active");
 
+        $filename = "";
+        if($req->hasFile('avatar')){
+            $filename = $req->avatar->hashName();
+            $req->avatar->storeAs('avatar',$filename,'public');
+        }
+
         $user->firstname = $firstname;
         $user->lastname = $lastname;
         $user->position = $position;
@@ -187,7 +200,10 @@ class AdminController extends Controller
         $user->business_id = $businessID;
         $user->role_id = $roleID;
         $user->password = $password;
-        $user->active = ($active ? true : false);
+        $user->active = $active;
+        if ($filename !== "") {
+            $user->avatar = $filename;
+        }
         $user->save();
 
         return redirect()->route('admin_user_edit', [$roleID, $user->id]);

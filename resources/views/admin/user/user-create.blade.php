@@ -30,7 +30,7 @@
                                 <h5 class="mb-0 text-white">Registrar Usuario</h5>
                             </div>
                             <hr>
-                            {{ Form::open(array('route' => 'admin_user_create_post', 'class'=>'row g-3', 'method' => 'post')) }}
+                            {{ Form::open(array('route' => 'admin_user_create_post', 'class'=>'row g-3', 'method' => 'post', 'enctype' => 'multipart/form-data', 'autocomplete' => 'off')) }}
                                 <div class="col-md-6">
                                     <label for="firstname" class="form-label">Nombre</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-user'></i></span>
@@ -55,8 +55,9 @@
                                 <div class="col-6">
                                     <label for="inputPhoneNo" class="form-label">Foto Perfil</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-microphone'></i></span>
-                                        <input type="file" class="form-control" id="inputGroupFile01">
+                                        <input type="file" class="form-control" id="avatar" name="avatar">
                                     </div>
+                                    {!! $errors->first('avatar', '<div class="error error-block">:message</div>') !!}
                                 </div>
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email</label>

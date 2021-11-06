@@ -30,7 +30,7 @@
                                 <h5 class="mb-0 text-white">Registrar Usuario</h5>
                             </div>
                             <hr>
-                            {{ Form::open(array('route' => array('admin_user_edit_put', $user->role_id, $user->id), 'class'=>'row g-3', 'method' => 'put')) }}
+                            {{ Form::open(array('route' => array('admin_user_edit_put', $user->role_id, $user->id), 'class'=>'row g-3', 'method' => 'put', 'enctype' => 'multipart/form-data', 'autocomplete' => 'off')) }}
                                 <div class="col-md-6">
                                     <label for="firstname" class="form-label">Nombre</label>
                                     <div class="input-group"> <span class="input-group-text"><i class='bx bxs-user'></i></span>
@@ -54,9 +54,18 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="inputPhoneNo" class="form-label">Foto Perfil</label>
-                                    <div class="input-group"> <span class="input-group-text"><i class='bx bxs-microphone'></i></span>
-                                        <input type="file" class="form-control" id="inputGroupFile01">
+                                    @if ($user->avatar)
+                                    <div class="col-12">
+                                        <a href="{{ asset('storage/avatar/'.$user->avatar) }}" target="_blank">
+                                            <img src="{{ asset('storage/avatar/'.$user->avatar) }}" width="100" />
+                                        </a>
                                     </div>
+                                    @endif
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bxs-microphone'></i></span>
+                                        <input type="file" class="form-control" id="avatar" name="avatar">
+                                    </div>
+                                    {!! $errors->first('avatar', '<div class="error error-block">:message</div>') !!}
                                 </div>
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email</label>

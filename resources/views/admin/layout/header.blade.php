@@ -351,11 +351,15 @@
                 <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     @if (Auth::user())
-                    <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
-                    <div class="user-info ps-3">
-                        <p class="user-name mb-0">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
-                        <p class="designattion mb-0">{{ Auth::user()->position }}</p>
-                    </div>
+                        @if (Auth::user()->avatar)
+                            <img src="{{ asset('storage/avatar/'.Auth::user()->avatar) }}" class="user-img" alt="user avatar">
+                        @else
+                            <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+                        @endif
+                        <div class="user-info ps-3">
+                            <p class="user-name mb-0">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
+                            <p class="designattion mb-0">{{ Auth::user()->position }}</p>
+                        </div>
                     @endif
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">

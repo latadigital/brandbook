@@ -26,6 +26,7 @@ class User extends Authenticatable
         'role_id',
         'active',
         'deleted_at',
+        'avatar',
     ];
 
     /**
@@ -34,7 +35,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'deleted_at',
     ];
 
     /**
@@ -61,5 +62,10 @@ class User extends Authenticatable
         if ($value != "") {
             $this->attributes['password'] = Hash::make($value);
         }
+    }
+
+    public function setActiveAttribute($value)
+    {
+        $this->attributes['active'] = ($value ? true : false);
     }
 }

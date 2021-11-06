@@ -21,6 +21,7 @@ class UsersSeed extends Seeder
             'password' => Hash::make("2805"),
             'business_id' => 1,
             'role_id' => 1,
+            'active' => 1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
