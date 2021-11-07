@@ -25,30 +25,30 @@ Route::group(['prefix' => 'administrator'], function() {
 
         // Users
         Route::group(['prefix' => 'user'], function() {
-            Route::get('/client', 'AdminController@admin')->name('admin_user');
-            Route::get('/admin', 'AdminController@admin')->name('admin_admin');
-            Route::get('/create', 'AdminController@createUser')->name('admin_user_create');
-            Route::post('/create', 'AdminController@createUserPost')->name('admin_user_create_post');
-            Route::get('/delete/{id}', 'AdminController@deleteUser')->name('admin_user_delete');
-            Route::get('/edit/{roleID}/{id}', 'AdminController@editUser')->name('admin_user_edit');
-            Route::put('/edit/{roleID}/{id}', 'AdminController@editUserPut')->name('admin_user_edit_put');
+            Route::get('/client', 'UserController@users')->name('admin_user');
+            Route::get('/admin', 'UserController@users')->name('admin_admin');
+            Route::get('/create', 'UserController@createUser')->name('admin_user_create');
+            Route::post('/create', 'UserController@createUserPost')->name('admin_user_create_post');
+            Route::get('/delete/{id}', 'UserController@deleteUser')->name('admin_user_delete');
+            Route::get('/edit/{roleID}/{id}', 'UserController@editUser')->name('admin_user_edit');
+            Route::put('/edit/{roleID}/{id}', 'UserController@editUserPut')->name('admin_user_edit_put');
         });
 
         // Campaigns
         Route::group(['prefix' => 'campaign'], function() {
-            Route::get('/', 'AdminController@campaign')->name('admin_campaign');
-            Route::get('/create', 'AdminController@createCampaign')->name('admin_campaign_create');
-            Route::get('/edit/{id}', 'AdminController@editCampaign')->name('admin_campaign_edit');
+            Route::get('/', 'CampaignController@campaign')->name('admin_campaign');
+            Route::get('/create', 'CampaignController@createCampaign')->name('admin_campaign_create');
+            Route::get('/edit/{id}', 'CampaignController@editCampaign')->name('admin_campaign_edit');
         });
 
         // Media
         Route::group(['prefix' => 'media'], function() {
-            Route::get('/', 'AdminController@media')->name('admin_media');
+            Route::get('/', 'MediaController@media')->name('admin_media');
         });
 
         // Calendar
         Route::group(['prefix' => 'calendar'], function() {
-            Route::get('/', 'AdminController@calendar')->name('admin_calendar');
+            Route::get('/', 'CalendarController@calendar')->name('admin_calendar');
         });
     });
 });
