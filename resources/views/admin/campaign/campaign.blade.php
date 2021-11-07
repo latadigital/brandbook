@@ -22,9 +22,12 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-lg-flex align-items-center mb-4 gap-3">
+                        {{ Form::open(array('route' => 'admin_campaign', 'method' => 'get', 'autocomplete' => 'off')) }}
                         <div class="position-relative">
-                            <input type="text" class="form-control ps-5 radius-30" placeholder="Buscar"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                            <input type="text" class="form-control ps-5 radius-30" placeholder="Buscar" name="search" value="{{ $word_search }}">
+                            <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
                         </div>
+                        {{ Form::close() }}
                         <div class="ms-auto">
                             <a href="{{ route("admin_campaign_create") }}" class="btn btn-light radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Agregar Campaña</a>
                         </div>
@@ -42,6 +45,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($campaigns as $campaign)
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center">
@@ -49,18 +53,25 @@
                                                 <img src="{{ asset("admin/assets/images/icons/chair.png") }}" alt="">
                                             </div>
                                             <div class="ms-2">
-                                                <h6 class="mb-1 font-14">Especial Muebles</h6>
+                                                <h6 class="mb-1 font-14">{{ $campaign->name }}</h6>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>Rodrigo López</td>
-                                    <td>2021-10-24</td>
+                                    <td>{{ $campaign->productManager->firstname }} {{ $campaign->productManager->lastname }}</td>
+                                    <td>{{ $campaign->release_date }}</td>
                                     <td>
-                                        <div class="d-flex align-items-center text-success">	<i class="bx bx-radio-circle-marked bx-burst bx-rotate-90 align-middle font-18 me-1"></i>
-                                            <span>Completa</span>
+                                    @if ($campaign->status->name == 'Pública')
+                                        <div class="d-flex align-items-center text-success">
+                                    @elseif ($campaign->status->name == 'Borrador')
+                                        <div class="d-flex align-items-center text-primary">
+                                    @else
+                                        <div class="d-flex align-items-center text-danger">
+                                    @endif
+                                            <i class="bx bx-radio-circle-marked bx-burst bx-rotate-90 align-middle font-18 me-1"></i>
+                                            <span>{{ $campaign->status->name }}</span>
                                         </div>
                                     </td>
-                                    <td>4</td>
+                                    <td>{{ count($campaign->files) }}</td>
                                     <td>
                                         <div class="d-flex order-actions">
                                             <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
@@ -68,58 +79,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="recent-product-img">
-                                                <img src="{{ asset("admin/assets/images/icons/chair.png") }}" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h6 class="mb-1 font-14">Especial Muebles</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Rodrigo López</td>
-                                    <td>2021-10-24</td>
-                                    <td>
-                                        <div class="d-flex align-items-center text-primary">	<i class="bx bx-radio-circle-marked bx-burst bx-rotate-90 align-middle font-18 me-1"></i>
-                                            <span>Borrador</span>
-                                        </div>
-                                    </td>
-                                    <td>4</td>
-                                    <td>
-                                        <div class="d-flex order-actions">
-                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
-                                            <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="recent-product-img">
-                                                <img src="{{ asset("admin/assets/images/icons/chair.png") }}" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h6 class="mb-1 font-14">Especial Muebles</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Rodrigo López</td>
-                                    <td>2021-10-24</td>
-                                    <td>
-                                        <div class="d-flex align-items-center text-danger">	<i class="bx bx-radio-circle-marked bx-burst bx-rotate-90 align-middle font-18 me-1"></i>
-                                            <span>Cancelada</span>
-                                        </div>
-                                    </td>
-                                    <td>4</td>
-                                    <td>
-                                        <div class="d-flex order-actions">
-                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
-                                            <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
