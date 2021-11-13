@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--favicon-->
     <link rel="icon" href="{{ asset('admin/assets/images/favicon-32x32.png') }}" type="image/png" />
     <!--plugins-->
@@ -43,7 +44,9 @@
             @include('admin.layout.header')
         @endif
 
-        @yield('content')
+        <div id="app">
+            @yield('content')
+        </div>
 
         @if (!View::hasSection('login'))
             <div class="overlay toggle-icon"></div>
@@ -92,6 +95,7 @@
         </div>
 
         <!--end switcher-->
+        <script src="{{ asset('/js/app.js') }}"></script>
         <!-- Bootstrap JS -->
         <script src="{{ asset('admin/assets/js/bootstrap.bundle.min.js') }}"></script>
         <!--plugins-->
@@ -109,7 +113,7 @@
         <script src="{{ asset('admin/assets/plugins/highcharts/js/highcharts.js') }}"></script>
         <script src="{{ asset('admin/assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
         <script src="{{ asset('admin/assets/js/index2.js') }}"></script>
-        <script src="{{ asset('admin/assets/plugins/Drag-And-Drop/dist/imageuploadify.min.js') }}"></script>
+        {{-- <script src="{{ asset('admin/assets/plugins/Drag-And-Drop/dist/imageuploadify.min.js') }}"></script> --}}
         <script src="{{ asset('admin/assets/plugins/datetimepicker/js/picker.js') }}"></script>
         <script src="{{ asset('admin/assets/plugins/datetimepicker/js/picker.time.js') }}"></script>
         <script src="{{ asset('admin/assets/plugins/datetimepicker/js/picker.date.js') }}"></script>
@@ -118,12 +122,11 @@
         <script
             src="{{ asset('admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js') }}">
         </script>
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 $('#image-uploadify').imageuploadify();
             })
-
-        </script>
+        </script> --}}
 
         <script>
             $(document).ready(function() {
@@ -212,11 +215,17 @@
         </script>
         <script>
             $('.datepicker').pickadate({
-                    selectMonths: true,
-                    selectYears: true
-                }),
-                $('.timepicker').pickatime()
-
+                monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                today: 'Fecha actual',
+                clear: 'Limpiar',
+                close: 'Cerrar',
+                format: 'yyyy-mm-dd',
+                formatSubmit: 'yyyy-mm-dd',
+                selectMonths: true,
+                selectYears: true
+            }),
+            $('.timepicker').pickatime()
         </script>
         <script>
             $(function() {
@@ -236,8 +245,9 @@
         <!--app JS-->
         <script src="{{ asset('admin/assets/js/app.js') }}"></script>
         <script>
-            new PerfectScrollbar('.dashboard-top-countries');
-
+            if ($('.dashboard-top-countries').length) {
+                new PerfectScrollbar('.dashboard-top-countries');
+            }
         </script>
         <script>
             $(document).ready(function() {

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -45,5 +44,16 @@ class AdminController extends Controller
 
     public function dashboard() {
         return view('admin.dashboard');
+    }
+
+    public function upload(Request $req) {
+      if ($req->has('file')) {
+        $filename = $req->file('file')->hashName();
+        $req->file('file')->storeAs('files', $filename, 'public');
+      }
+    }
+
+    public function uploadDelete(Request $req) {
+      return "borrar";
     }
 }

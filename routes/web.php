@@ -25,8 +25,9 @@ Route::group(['prefix' => 'administrator'], function() {
 
         // Users
         Route::group(['prefix' => 'user'], function() {
-            Route::get('/client', 'UserController@users')->name('admin_user');
             Route::get('/admin', 'UserController@users')->name('admin_admin');
+            Route::get('/client', 'UserController@users')->name('admin_user');
+            Route::get('/product-manager', 'UserController@users')->name('admin_product_manager');
             Route::get('/create', 'UserController@createUser')->name('admin_user_create');
             Route::post('/create', 'UserController@createUserPost')->name('admin_user_create_post');
             Route::get('/delete/{id}', 'UserController@deleteUser')->name('admin_user_delete');
@@ -38,6 +39,8 @@ Route::group(['prefix' => 'administrator'], function() {
         Route::group(['prefix' => 'campaign'], function() {
             Route::get('/', 'CampaignController@campaign')->name('admin_campaign');
             Route::get('/create', 'CampaignController@createCampaign')->name('admin_campaign_create');
+            Route::post('/create/upload', 'CampaignController@createUploadCampaign')->name('admin_campaign_create_uploads');
+            // Route::post('/create', 'CampaignController@createCampaignPost')->name('admin_campaign_create_post');
             Route::get('/edit/{id}', 'CampaignController@editCampaign')->name('admin_campaign_edit');
         });
 
@@ -50,5 +53,9 @@ Route::group(['prefix' => 'administrator'], function() {
         Route::group(['prefix' => 'calendar'], function() {
             Route::get('/', 'CalendarController@calendar')->name('admin_calendar');
         });
+
+        // upload
+        Route::post('/upload', 'AdminController@upload')->name('api_upload');
+        Route::post('/upload/delete', 'AdminController@uploadDelete')->name('api_upload_delete');
     });
 });

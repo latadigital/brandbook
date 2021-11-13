@@ -32,6 +32,7 @@
                 <li> <a href="{{ route('admin_admin') }}"><i class="bx bx-right-arrow-alt"></i>Administradores</a>
                 </li>
                 <li> <a href="{{ route('admin_user') }}"><i class="bx bx-right-arrow-alt"></i>Clientes</a></li>
+                <li> <a href="{{ route('admin_product_manager') }}"><i class="bx bx-right-arrow-alt"></i>Product Managers</a></li>
             </ul>
         </li>
         <li>

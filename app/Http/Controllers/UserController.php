@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\UserPostRequest;
+use App\Http\Requests\UserPutRequest;
+
+use Carbon\Carbon;
 use App\User;
 use App\Business;
 use App\Role;
@@ -12,6 +16,7 @@ use Route;
 
 define("ADMIN_ROLE_ID", 1);
 define("CLIENT_ROLE_ID", 2);
+define("PRODUCT_MANAGER_ROLE_ID", 3);
 
 class UserController extends Controller
 {
@@ -19,6 +24,9 @@ class UserController extends Controller
         $roleID = CLIENT_ROLE_ID;
         if (Route::currentRouteName() == 'admin_admin') {
             $roleID = ADMIN_ROLE_ID;
+        }
+        if (Route::currentRouteName() == 'admin_product_manager') {
+          $roleID = PRODUCT_MANAGER_ROLE_ID;
         }
         $search = $req->get("search");
         $query = User::where('role_id', $roleID)->whereNull('deleted_at')->orderBy('created_at', 'desc');
@@ -39,6 +47,10 @@ class UserController extends Controller
         if ($roleID == ADMIN_ROLE_ID) {
             $referTitle = "Administradores";
             $routePath = "admin_admin";
+        }
+        if ($roleID == PRODUCT_MANAGER_ROLE_ID) {
+          $referTitle = "Product Managers";
+          $routePath = "admin_product_manager";
         }
 
         $output = [
@@ -101,6 +113,9 @@ class UserController extends Controller
         if ($roleID == ADMIN_ROLE_ID) {
             $aliasRoute = "admin_admin";
         }
+        if ($roleID == PRODUCT_MANAGER_ROLE_ID) {
+          $aliasRoute = "admin_product_manager";
+        }
         return redirect()->route($aliasRoute);
     }
 
@@ -121,6 +136,10 @@ class UserController extends Controller
         if ($roleID == ADMIN_ROLE_ID) {
             $referTitle = "Administradores";
             $referURL = route("admin_admin");
+        }
+        if ($roleID == PRODUCT_MANAGER_ROLE_ID) {
+          $referTitle = "Product Managers";
+          $referURL = "admin_product_manager";
         }
 
         $user = User::find($userID);
