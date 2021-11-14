@@ -24,18 +24,30 @@
                 <h5 class="card-title">Agregar Campaña</h5>
                 <hr/>
                 <div class="form-body mt-4">
-                    {{ Form::open(array('route' => 'admin_campaign_create_uploads', 'method' => 'post', 'autocomplete' => 'off')) }}
-                    {!! Form::hidden('campaign_id', $campaign_id) !!}
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="border border-3 p-4 rounded">
-                                <div class="mb-3">
+                    {{ Form::open(array('route' => 'admin_campaign_create_post', 'method' => 'POST', 'autocomplete' => 'off')) }}
+                      {!! Form::hidden('campaign_id', $campaign_id) !!}
+                      @if(isset($modeUpdate) and $modeUpdate)
+                        {!! Form::hidden('editable', true) !!}
+                      @endif
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <div class="border border-3 p-4 rounded">
+                                  <div class="mb-3">
                                     <label for="inputProductDescription" class="form-label">Agregar Archivos</label>
                                     <multi-uploader />
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--end row-->
+                                  </div>
+                                  <div class="alert clearfix">
+                                    <button type="submit" class="btn btn-primary btn-lg create-campaign float-end">
+                                      @if ($modeUpdate)
+                                        Actualizar campaña
+                                      @else
+                                        Crear campaña
+                                      @endif
+                                    </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                     {{ Form::close() }}
                 </div>
             </div>

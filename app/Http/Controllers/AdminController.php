@@ -6,16 +6,20 @@ use App\Http\Requests\UserPostRequest;
 use App\Http\Requests\UserPutRequest;
 use App\Http\Requests\LoginRequest;
 use Carbon\Carbon;
+use Storage;
 
 use App\User;
 use App\Business;
 use App\Role;
+use App\File;
 
 use Auth;
 use Route;
 
 define("ADMIN_ROLE_ID", 1);
 define("CLIENT_ROLE_ID", 2);
+
+define("PATH_STORAGE_CAMPAIGNS", "campaigns");
 
 class AdminController extends Controller
 {
@@ -47,13 +51,30 @@ class AdminController extends Controller
     }
 
     public function upload(Request $req) {
-      if ($req->has('file')) {
-        $filename = $req->file('file')->hashName();
-        $req->file('file')->storeAs('files', $filename, 'public');
+      $hashFileName = "";
+      if ($req->has('file') and $req->has('campaign_id')) {
+        $campaignId = $req->input("campaign_id");
+        $filenameOrig = $req->file('file')->getClientOriginalName();
+        $hashFileName = $req->file('file')->hashName();
+        $res = $req->file('file')->storeAs(PATH_STORAGE_CAMPAIGNS.'/'.$campaignId, $hashFileName, 'public');
+        File::create([
+          "name" => $filenameOrig,
+          "url" => $hashFileName,
+          "campaign_id" => $campaignId,
+        ]);
       }
+      return $hashFileName;
     }
 
     public function uploadDelete(Request $req) {
-      return "borrar";
+      if ($req->has('filename') and $req->has('campaign_id')) {
+        $campaignId = $req->input('campaign_id');
+        $filename = $req->input('filename');
+        $pathfilename = PATH_STORAGE_CAMPAIGNS.'/'.$campaignId.'/'.$filename;
+        Storage::disk('public')->delete($pathfilename);
+
+        $file = File::where('campaign_id', $campaignId)->where('url', $filename)->first();
+        $file->delete();
+      }
     }
 }

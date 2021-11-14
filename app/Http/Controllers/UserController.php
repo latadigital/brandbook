@@ -139,7 +139,7 @@ class UserController extends Controller
         }
         if ($roleID == PRODUCT_MANAGER_ROLE_ID) {
           $referTitle = "Product Managers";
-          $referURL = "admin_product_manager";
+          $referURL = route("admin_product_manager");
         }
 
         $user = User::find($userID);

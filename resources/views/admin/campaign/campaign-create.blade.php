@@ -64,18 +64,18 @@
                                     <div class="col-12">
                                       <label for="basic-url" class="form-label">Url Campaña</label>
                                       <div class="input-group"> <span class="input-group-text" id="basic-addon3">{{ $base_url_campaign_easy }}</span>
-                                          <input type="text" name="url" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ old('campaign_url') }}">
+                                          <input type="text" name="url" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ old('url') }}">
                                       </div>
                                       {!! $errors->first('url', '<div class="error error-block">:message</div>') !!}
                                     </div>
                                     <div class="col-12">
                                       <label for="basic-url" class="form-label">Ícono Campaña</label>
-                                      <input type="file" name="icon" class="form-control" id="inputGroupFile01">
+                                      <input type="file" name="icon" class="form-control" id="inputGroupFile01" accept="image/png, image/jpeg, image/jpg, image/gif">
                                       {!! $errors->first('icon', '<div class="error error-block">:message</div>') !!}
                                     </div>
                                     <div class="col-12">
                                       <label for="basic-url" class="form-label">Screenshot Campaña</label>
-                                      <input type="file" name="screenshot" class="form-control" id="inputGroupFile02">
+                                      <input type="file" name="screenshot" class="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/jpg, image/gif">
                                       {!! $errors->first('screenshot', '<div class="error error-block">:message</div>') !!}
                                     </div>
                                     <div class="col-12">
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductDescription" class="form-label">Descripción</label>
-                                    <textarea class="form-control" id="inputProductDescription" rows="3" name="description">{{ old('description') }}</textarea>
+                                    <textarea class="form-control" id="inputProductDescription" rows="15" name="description">{{ old('description') }}</textarea>
                                     {!! $errors->first('description', '<div class="error error-block">:message</div>') !!}
                                 </div>
                                 {{-- <div class="mb-3">

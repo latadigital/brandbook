@@ -40,9 +40,12 @@ Route::group(['prefix' => 'administrator'], function() {
             Route::get('/', 'CampaignController@campaign')->name('admin_campaign');
             Route::get('/create', 'CampaignController@createCampaign')->name('admin_campaign_create');
             Route::post('/create/upload', 'CampaignController@createUploadCampaign')->name('admin_campaign_create_uploads');
-            // Route::post('/create', 'CampaignController@createCampaignPost')->name('admin_campaign_create_post');
+            Route::post('/create', 'CampaignController@createCampaignPost')->name('admin_campaign_create_post');
+            Route::get('/delete/{id}', 'CampaignController@deleteCampaign')->name('admin_campaign_delete');
             Route::get('/edit/{id}', 'CampaignController@editCampaign')->name('admin_campaign_edit');
-        });
+            Route::post('/edit/{id}/upload', 'CampaignController@editUploadCampaign')->name('admin_campaign_edit_uploads');
+            Route::get('/{id}/files', 'CampaignController@getUploadsCampaignId')->name('admin_campaign_get_files');
+          });
 
         // Media
         Route::group(['prefix' => 'media'], function() {
@@ -56,6 +59,6 @@ Route::group(['prefix' => 'administrator'], function() {
 
         // upload
         Route::post('/upload', 'AdminController@upload')->name('api_upload');
-        Route::post('/upload/delete', 'AdminController@uploadDelete')->name('api_upload_delete');
+        Route::delete('/upload', 'AdminController@uploadDelete')->name('api_upload_delete');
     });
 });

@@ -50,7 +50,11 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="recent-product-img">
+                                              @if ($campaign->icon)
+                                                <img src="{{ asset("storage/icon/".$campaign->icon) }}" alt="">
+                                              @else
                                                 <img src="{{ asset("admin/assets/images/icons/chair.png") }}" alt="">
+                                              @endif
                                             </div>
                                             <div class="ms-2">
                                                 <h6 class="mb-1 font-14">{{ $campaign->name }}</h6>
@@ -74,8 +78,8 @@
                                     <td>{{ count($campaign->files) }}</td>
                                     <td>
                                         <div class="d-flex order-actions">
-                                            <a href="{{ route("admin_campaign_edit", 1) }}" class=""><i class="bx bxs-edit"></i></a>
-                                            <a href="javascript:;" class="ms-4"><i class="bx bxs-trash"></i></a>
+                                            <a href="{{ route("admin_campaign_edit", $campaign->id) }}" class=""><i class="bx bxs-edit"></i></a>
+                                            <a href="{{ route('admin_campaign_delete', $campaign->id) }}" class="ms-4"><i class="bx bxs-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
