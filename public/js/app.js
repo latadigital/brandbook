@@ -2007,6 +2007,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   var formData = new FormData();
                   formData.append("file", fileData.file);
                   formData.append("campaign_id", campaignId);
+                  formData.append("category_file_id", 1); // category campaign
+
+                  // category campaign
                   return formData;
                 });
 
@@ -24477,7 +24480,7 @@ var render = function () {
           multiple: true,
           deletable: true,
           meta: true,
-          accept: "image/*,.zip,.rar",
+          accept: "image/*,.zip,.rar,.doc,.docx,.psd,.ai",
           helpText: "Seleccione imagenes o archivos para subir",
           errorText: {
             type: "Tipo de archivo inválido. Solo se permiten imágenes o archivos comprimidos",

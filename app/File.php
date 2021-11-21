@@ -9,13 +9,19 @@ class File extends Model
     protected $table = "files";
 
     protected $fillable = [
-        'name',
-        'url',
-        'campaign_id',
-        'deleted_at',
+      'name',
+      'url',
+      'campaign_id',
+      'category_file_id',
+      'deleted_at',
     ];
 
     protected $hidden = [
-        'deleted_at',
+      'deleted_at',
     ];
+
+    public function categoryFile()
+    {
+        return $this->belongsTo(CategoryFile::class);
+    }
 }

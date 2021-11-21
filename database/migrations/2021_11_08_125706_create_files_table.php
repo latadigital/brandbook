@@ -17,7 +17,9 @@ class CreateFilesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('url');
-            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('category_file_id');
+            $table->foreign('category_file_id')->references('id')->on('category_files');
+            $table->unsignedBigInteger('campaign_id')->nullable();
             $table->foreign('campaign_id')->references('id')->on('campaigns');
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();

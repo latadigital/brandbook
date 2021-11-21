@@ -79,6 +79,7 @@ class CampaignController extends Controller
 
       $output = [
         "campaign_id" => $campaignId,
+        "modeUpdate" => false,
       ];
       return view("admin.campaign.campaign-upload", $output);
     }
@@ -150,7 +151,7 @@ class CampaignController extends Controller
       $files = File::where('campaign_id', $campaignId)->get();
       $filesParser = [];
       foreach($files as $file) {
-        $pathfilename = 'campaigns/'.$campaignId.'/'.$file->url;
+        $pathfilename = $file->categoryFile->folder.'/'.$campaignId.'/'.$file->url;
         array_push($filesParser, [
           "name" => $file->name,
           "newname" => $file->url,

@@ -52,14 +52,16 @@ class AdminController extends Controller
 
     public function upload(Request $req) {
       $hashFileName = "";
-      if ($req->has('file') and $req->has('campaign_id')) {
+      if ($req->has('file') and $req->has('campaign_id') and $req->has('category_file_id')) {
         $campaignId = $req->input("campaign_id");
+        $categoryFileId = $req->input("category_file_id");
         $filenameOrig = $req->file('file')->getClientOriginalName();
         $hashFileName = $req->file('file')->hashName();
         $res = $req->file('file')->storeAs(PATH_STORAGE_CAMPAIGNS.'/'.$campaignId, $hashFileName, 'public');
         File::create([
           "name" => $filenameOrig,
           "url" => $hashFileName,
+          "category_file_id" => $categoryFileId,
           "campaign_id" => $campaignId,
         ]);
       }

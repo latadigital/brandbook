@@ -22,28 +22,32 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-grid mb-3"> <a href="javascript:;" class="btn btn-light">+ Agregar medio</a></div>
-                        <h5 class="mb-0 font-weight-bold ">45.5 GB <span class="float-end">50 GB</span></h5>
-                        <p class="mb-0 mt-2"><span class="">Uso</span><span class="float-end">Tamaño</span>
+                        <h5 class="mb-0 font-weight-bold ">
+                          {{ bytesToHuman($sizeTotal) }}
+                          {{-- <span class="float-end">50 GB</span> --}}
+                        </h5>
+                        {{-- <p class="mb-0 mt-2"><span class="">Uso</span><span class="float-end">Tamaño</span> --}}
                         </p>
-                        <div class="progress mt-3" style="height:7px;">
+                        {{-- <div class="progress mt-3" style="height:7px;">
                             <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15"
                                 aria-valuemin="0" aria-valuemax="100"></div>
                             <div class="progress-bar bg-warning" role="progressbar" style="width: 30%"
                                 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                             <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20"
                                 aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="mt-3"></div>
-                        <div class="d-flex align-items-center">
-                            <div class="fm-file-box bg-light-primary text-primary"><i class='bx bx-image'></i>
+                        </div> --}}
+                        @foreach ($categories as $category)
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="fm-file-box {{ $category["class"] }}"><i class='bx {{ $category["icon"] }}'></i>
                             </div>
                             <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Imágenes</h6>
-                                <p class="mb-0 text-secondary">1,756 archivos</p>
+                                <h6 class="mb-0">{{ $category["title"] }}</h6>
+                                <p class="mb-0 text-secondary">{{ $category["qty"] }} archivos</p>
                             </div>
-                            <h6 class="mb-0">15.3 GB</h6>
+                            <h6 class="mb-0">{{ bytesToHuman($category["size"]) }}</h6>
                         </div>
-                        <div class="d-flex align-items-center mt-3">
+                        @endforeach
+                        {{-- <div class="d-flex align-items-center mt-3">
                             <div class="fm-file-box bg-light-success text-success"><i class='bx bxs-file-doc'></i>
                             </div>
                             <div class="flex-grow-1 ms-2">
@@ -89,7 +93,7 @@
                                 <p class="mb-0 text-secondary">57 archivos</p>
                             </div>
                             <h6 class="mb-0">178 GB</h6>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -105,7 +109,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-12 col-lg-4">
+                            {{-- <div class="col-12 col-lg-6">
                                 <div class="card shadow-none border radius-15">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
@@ -115,7 +119,9 @@
                                             </div>
                                         </div>
                                         <h5 class="mt-3 mb-0">Repositorio General</h5>
-                                        <p class="mb-1 mt-4"><span>45.5 GB</span> <span class="float-end">50 GB</span>
+                                        <p class="mb-1 mt-4">
+                                          <span>45.5 GB</span>
+                                          <span class="float-end">50 GB</span>
                                         </p>
                                         <div class="progress" style="height: 7px;">
                                             <div class="progress-bar" role="progressbar" style="width: 75%;"
@@ -123,27 +129,29 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 col-lg-4">
+                            </div> --}}
+                            <div class="col-12 col-lg-12">
                                 <div class="card shadow-none border radius-15">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div class="fm-icon-box radius-15"><i class='bx bxs-folder'></i>
                                             </div>
-                                            <div class="ms-auto font-24"><i class='bx bx-dots-horizontal-rounded'></i>
-                                            </div>
+                                            {{-- <div class="ms-auto font-24"><i class='bx bx-dots-horizontal-rounded'></i>
+                                            </div> --}}
                                         </div>
                                         <h5 class="mt-3 mb-0">Campañas</h5>
-                                        <p class="mb-1 mt-4"><span>1,2 GB</span> <span class="float-end">3 GB</span>
+                                        <p class="mb-1 mt-4">
+                                          <span>{{ bytesToHuman($sizeCampaign) }}</span>
+                                          {{-- <span class="float-end">3 GB</span> --}}
                                         </p>
-                                        <div class="progress" style="height: 7px;">
+                                        {{-- <div class="progress" style="height: 7px;">
                                             <div class="progress-bar" role="progressbar" style="width: 45%;"
                                                 aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-4">
+                            {{-- <div class="col-12 col-lg-4">
                                 <div class="card shadow-none border radius-15">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
@@ -153,7 +161,9 @@
                                             </div>
                                         </div>
                                         <h5 class="mt-3 mb-0">Marketing</h5>
-                                        <p class="mb-1 mt-4"><span>2,5 GB</span> <span class="float-end">3 GB</span>
+                                        <p class="mb-1 mt-4">
+                                          <span>2,5 GB</span>
+                                          <span class="float-end">3 GB</span>
                                         </p>
                                         <div class="progress" style="height: 7px;">
                                             <div class="progress-bar" role="progressbar" style="width: 65%;"
@@ -161,7 +171,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <!--end row-->
                         <h5>Folders</h5>
@@ -225,8 +235,7 @@
                             <div>
                                 <h5 class="mb-0">Archivos recientes</h5>
                             </div>
-                            <div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-light">Ver todo</a>
-                            </div>
+                            {{-- <div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-light">Ver todo</a></div> --}}
                         </div>
                         <div class="table-responsive mt-3">
                             <table class="table table-striped table-hover table-sm mb-0">
@@ -234,129 +243,23 @@
                                     <tr>
                                         <th>Nombre<i class='bx bx-up-arrow-alt ms-2'></i>
                                         </th>
-                                        <th>Miembros</th>
-                                        <th>Modificado</th>
-                                        <th></th>
+                                        <th>Cargado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($files as $file)
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div><i class='bx bxs-file-pdf me-2 font-24'></i>
                                                 </div>
-                                                <div class="font-weight-bold">Competitor Analysis Template</div>
+                                                <div class="font-weight-bold">{{ $file->name }}</div>
                                             </div>
                                         </td>
-                                        <td>Only you</td>
-                                        <td>Sep 3, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
+                                        <td>{{ $file->created_at->format("d-m-Y H:i:s") }}</td>
+                                        {{-- <td><i class='bx bx-dots-horizontal-rounded font-24'></i></td> --}}
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">How to Create a Case Study</div>
-                                            </div>
-                                        </td>
-                                        <td>3 members</td>
-                                        <td>Jun 12, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Landing Page Structure</div>
-                                            </div>
-                                        </td>
-                                        <td>10 members</td>
-                                        <td>Jul 17, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file-pdf me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Meeting Report</div>
-                                            </div>
-                                        </td>
-                                        <td>5 members</td>
-                                        <td>Aug 28, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Project Documents</div>
-                                            </div>
-                                        </td>
-                                        <td>Only you</td>
-                                        <td>Aug 17, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file-doc me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Review Checklist Template</div>
-                                            </div>
-                                        </td>
-                                        <td>7 members</td>
-                                        <td>Sep 8, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">How to Create a Case Study</div>
-                                            </div>
-                                        </td>
-                                        <td>3 members</td>
-                                        <td>Jun 12, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Landing Page Structure</div>
-                                            </div>
-                                        </td>
-                                        <td>10 members</td>
-                                        <td>Jul 17, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div><i class='bx bxs-file-doc me-2 font-24'></i>
-                                                </div>
-                                                <div class="font-weight-bold">Review Checklist Template</div>
-                                            </div>
-                                        </td>
-                                        <td>7 members</td>
-                                        <td>Sep 8, 2019</td>
-                                        <td><i class='bx bx-dots-horizontal-rounded font-24'></i>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
