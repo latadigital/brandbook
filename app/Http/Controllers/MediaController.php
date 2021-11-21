@@ -31,7 +31,6 @@ class MediaController extends Controller
         "files" => $files,
         "categories" => $categories,
       ];
-      dump($categories);
       return view("admin.media.media", $output);
     }
 }
