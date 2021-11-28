@@ -24,10 +24,6 @@ class CreateCampaignsTable extends Migration
             $table->date("end_date");
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('statuses');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedBigInteger('product_manager_id');
-            $table->foreign('product_manager_id')->references('id')->on('users');
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
         });

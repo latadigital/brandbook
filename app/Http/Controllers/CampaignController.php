@@ -31,6 +31,9 @@ class CampaignController extends Controller
       }
       $query->orderBy('created_at', 'desc')->get();
       $campaigns = $query->get();
+      if ($req->get("type") === "json") {
+        return $campaigns;
+      }
       $output = [
           "campaigns" => $campaigns,
           "word_search" => $search,
@@ -63,22 +66,22 @@ class CampaignController extends Controller
           $screenshot = $req->screenshot->hashName();
           $req->screenshot->storeAs('screenshot',$screenshot,'public');
       }
-      $campaignId = Campaign::create([
+      $campaign = Campaign::create([
         'name' => $req->input('name'),
         'description' => $req->input('description'),
         'url' => $req->input('url'),
         'release_date' => $req->input('release_date'),
         'end_date' => $req->input('end_date'),
         'status_id' => $req->input('status'),
-        'category_id' => $req->input('category'),
-        'product_manager_id' => $req->input('product_manager'),
         'icon' => $icon,
         'screenshot' => $screenshot,
         'deleted_at' => Carbon::now(),
-      ])->id;
+      ]);
+      $campaign->categories()->sync($req->input("category"));
+      $campaign->productManagers()->sync($req->input("product_manager"));
 
       $output = [
-        "campaign_id" => $campaignId,
+        "campaign_id" => $campaign->id,
         "modeUpdate" => false,
       ];
       return view("admin.campaign.campaign-upload", $output);
@@ -126,8 +129,8 @@ class CampaignController extends Controller
       $campaign->release_date = $req->input("release_date");
       $campaign->end_date = $req->input("end_date");
       $campaign->status_id = $req->input("status");
-      $campaign->category_id = $req->input("category");
-      $campaign->product_manager_id = $req->input("product_manager");
+      $campaign->productManagers()->sync($req->input("product_manager"));
+      $campaign->categories()->sync($req->input("category"));
       if($req->hasFile('icon')){
           $icon = $req->icon->hashName();
           $req->icon->storeAs('icon',$icon, 'public');

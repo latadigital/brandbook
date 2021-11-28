@@ -61,7 +61,15 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{{ $campaign->productManager->firstname }} {{ $campaign->productManager->lastname }}</td>
+                                    <td>
+                                      @if (count($campaign->productManagers) > 0)
+                                      <ul>
+                                        @foreach($campaign->productManagers as $user)
+                                          <li>{{ $user->firstname }} {{ $user->lastname }}</li>
+                                        @endforeach
+                                      </ul>
+                                      @endif
+                                    </td>
                                     <td>{{ $campaign->release_date }}</td>
                                     <td>
                                     @if ($campaign->status->name == 'Pública')

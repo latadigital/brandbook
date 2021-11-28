@@ -51,14 +51,34 @@
                             </div>
                             <div class="col-12">
                               <label for="inputProductType" class="form-label">Product Manager</label>
-                              <select class="form-select" name="product_manager" id="inputProductType">
-                                <option value="">Seleccione</option>
-                                @foreach($productManagers as $productManager)
-                                  <option value="{{ $productManager->id }}" {{ (old('product_manager', $campaign->product_manager_id) == $productManager->id) ? "selected" : "" }}>{{ $productManager->firstname }} {{ $productManager->lastname }}</option>
+                              @if (count($campaign->productManagers))
+                                @foreach($campaign->productManagers as $key => $user)
+                                <div class="select-group overflow-hidden">
+                                  <select class="form-select" name="product_manager[]" id="inputProductOwner">
+                                    <option value="">Seleccione</option>
+                                    @foreach($productManagers as $productManager)
+                                      <option value="{{ $productManager->id }}" {{ (collect(old('product_manager', $user->id))->contains($productManager->id)) ? "selected" : "" }}>{{ $productManager->firstname }} {{ $productManager->lastname }}</option>
+                                    @endforeach
+                                  </select>
+                                  @if ($key > 0)
+                                    <div class="col-12">
+                                      <a href="javascript:void(0)" title="" class="btn-delete float-end">Eliminar</a>
+                                    </div>
+                                  @endif
+                                </div>
                                 @endforeach
-                              </select>
+                              @else
+                                <div class="select-group overflow-hidden">
+                                  <select class="form-select" name="product_manager[]" id="inputProductOwner">
+                                    <option value="">Seleccione</option>
+                                    @foreach($productManagers as $productManager)
+                                      <option value="{{ $productManager->id }}" {{ (collect(old('product_manager'))->contains($productManager->id)) ? "selected" : "" }}>{{ $productManager->firstname }} {{ $productManager->lastname }}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                              @endif
                               {!! $errors->first('product_manager', '<div class="error error-block">:message</div>') !!}
-                              <a href="{{ route('admin_product_manager') }}" class="form-label mt-1">+ Agregar</a>
+                              <a href="javascript:void(0)" class="form-label mt-1 clone-btn">+ Agregar</a>
                             </div>
                             <div class="col-12">
                               <label for="basic-url" class="form-label">Url Campaña</label>
@@ -93,14 +113,34 @@
                             </div>
                             <div class="col-12">
                               <label for="inputProductType" class="form-label">Categorías</label>
-                              <select class="form-select" name="category" id="inputProductType">
-                                <option value="">Seleccione</option>
-                                @foreach($categories as $category)
-                                  <option value="{{ $category->id }}" {{ (old('category', $campaign->category_id) == $category->id) ? "selected" : "" }}>{{ $category->name }}</option>
+                                @if (count($campaign->categories))
+                                  @foreach($campaign->categories as $key => $categoriesCampaign)
+                                    <div class="select-group overflow-hidden">
+                                      <select class="form-select" name="category[]" id="inputCategories">
+                                        <option value="">Seleccione</option>
+                                        @foreach($categories as $category)
+                                          <option value="{{ $category->id }}" {{ (collect(old('category', $categoriesCampaign->id))->contains($category->id)) ? "selected" : "" }}>{{ $category->name }}</option>
+                                        @endforeach
+                                      </select>
+                                      @if ($key > 0)
+                                        <div class="col-12">
+                                          <a href="javascript:void(0)" title="" class="btn-delete float-end">Eliminar</a>
+                                        </div>
+                                      @endif
+                                    </div>
                                 @endforeach
-                              </select>
+                                @else
+                                  <div class="select-group overflow-hidden">
+                                    <select class="form-select" name="category[]" id="inputCategories">
+                                      <option value="">Seleccione</option>
+                                      @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ (collect(old('category'))->contains($category->id)) ? "selected" : "" }}>{{ $category->name }}</option>
+                                      @endforeach
+                                    </select>
+                                  </div>
+                                @endif
                               {!! $errors->first('category', '<div class="error error-block">:message</div>') !!}
-                              <a href="javascript:void(0)" class="form-label mt-1">+ Agregar</a>
+                              <a href="javascript:void(0)" class="form-label mt-1 clone-btn">+ Agregar</a>
                             </div>
                             <div class="col-12 mt-5">
                               <div class="d-grid">

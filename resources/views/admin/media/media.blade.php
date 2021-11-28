@@ -42,58 +42,11 @@
                             </div>
                             <div class="flex-grow-1 ms-2">
                                 <h6 class="mb-0">{{ $category["title"] }}</h6>
-                                <p class="mb-0 text-secondary">{{ $category["qty"] }} archivos</p>
+                                <p class="mb-0 text-secondary">{{ $category["qty"] }} archivo(s)</p>
                             </div>
                             <h6 class="mb-0">{{ bytesToHuman($category["size"]) }}</h6>
                         </div>
                         @endforeach
-                        {{-- <div class="d-flex align-items-center mt-3">
-                            <div class="fm-file-box bg-light-success text-success"><i class='bx bxs-file-doc'></i>
-                            </div>
-                            <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Documentos</h6>
-                                <p class="mb-0 text-secondary">123 archivos</p>
-                            </div>
-                            <h6 class="mb-0">256 MB</h6>
-                        </div>
-                        <div class="d-flex align-items-center mt-3">
-                            <div class="fm-file-box bg-light-danger text-danger"><i class='bx bx-video'></i>
-                            </div>
-                            <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Multimedia</h6>
-                                <p class="mb-0 text-secondary">24 archivos</p>
-                            </div>
-                            <h6 class="mb-0">3.4 GB</h6>
-                        </div>
-                        <div class="d-flex align-items-center mt-3">
-                            <div class="fm-file-box bg-light-warning text-warning"><i class='bx bx-vector'></i>
-                            </div>
-                            <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Illustrator</h6>
-                                <p class="mb-0 text-secondary">458 archivos</p>
-                            </div>
-                            <h6 class="mb-0">3 GB</h6>
-                        </div>
-                        <div class="d-flex align-items-center mt-3">
-                            <div class="fm-file-box bg-light-info text-info">
-                                <i class='bx bx-brush'></i>
-                            </div>
-                            <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Photoshop</h6>
-                                <p class="mb-0 text-secondary">458 archivos</p>
-                            </div>
-                            <h6 class="mb-0">3 GB</h6>
-                        </div>
-                        <div class="d-flex align-items-center mt-3">
-                            <div class="fm-file-box bg-light-dark text-dark">
-                                <i class='bx bx-image'></i>
-                            </div>
-                            <div class="flex-grow-1 ms-2">
-                                <h6 class="mb-0">Unknown Files</h6>
-                                <p class="mb-0 text-secondary">57 archivos</p>
-                            </div>
-                            <h6 class="mb-0">178 GB</h6>
-                        </div> --}}
                     </div>
                 </div>
             </div>

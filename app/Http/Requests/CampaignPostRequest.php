@@ -18,9 +18,11 @@ class CampaignPostRequest extends FormRequest
             'release_date' => 'required|date_format:Y-m-d',
             'end_date' => 'required|date_format:Y-m-d',
             'status' => 'required|integer',
-            'product_manager' => 'required|integer',
+            'product_manager' => 'required|array|min:1',
+            'product_manager.*' => 'required|integer',
             'url' => 'required',
-            'category' => 'required|integer',
+            'category' => 'required|array|min:1',
+            'category.*' => 'required|integer',
         ];
     }
 
@@ -35,10 +37,13 @@ class CampaignPostRequest extends FormRequest
             'status.required' => 'El campo estado es requerido',
             'status.integer' => 'El campo estado debe ser númerico',
             'product_manager.required' => 'El campo product manager es requerido',
-            'product_manager.integer' => 'El campo product manager debe ser númerico',
+            'product_manager.array' => 'El campo product manager debe ser arreglo',
+            'product_manager.min' => 'Debe seleccionar al menos 1 product manager',
             'url.required' => 'El campo url campaña es requerido',
             'category.required' => 'El campo categoría es requerido',
+            'category.array' => 'El campo categoría debe ser arreglo',
             'category.integer' => 'El campo categoría debe ser númerico',
+            'category.min' => 'Debe seleccionar al menos 1 categoría',
         ];
     }
 }

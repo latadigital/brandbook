@@ -51,14 +51,16 @@
                                     </div>
                                     <div class="col-12">
                                       <label for="inputProductType" class="form-label">Product Manager</label>
-                                      <select class="form-select" name="product_manager" id="inputProductType">
-                                        <option value="">Seleccione</option>
-                                        @foreach($productManagers as $productManager)
-                                          <option value="{{ $productManager->id }}" {{ (old('product_manager') == $productManager->id) ? "selected" : "" }}>{{ $productManager->firstname }} {{ $productManager->lastname }}</option>
-                                        @endforeach
-                                      </select>
+                                      <div class="select-group overflow-hidden">
+                                        <select class="form-select" name="product_manager[]" id="inputProductOwner">
+                                          <option value="">Seleccione</option>
+                                          @foreach($productManagers as $productManager)
+                                            <option value="{{ $productManager->id }}" {{ (collect(old('product_manager'))->contains($productManager->id)) ? "selected" : "" }}>{{ $productManager->firstname }} {{ $productManager->lastname }}</option>
+                                          @endforeach
+                                        </select>
+                                      </div>
                                       {!! $errors->first('product_manager', '<div class="error error-block">:message</div>') !!}
-                                      <a href="{{ route('admin_product_manager') }}" class="form-label mt-1">+ Agregar</a>
+                                      <a href="javascript:void(0)" class="form-label mt-1 clone-btn">+ Agregar</a>
                                     </div>
 
                                     <div class="col-12">
@@ -80,14 +82,16 @@
                                     </div>
                                     <div class="col-12">
                                       <label for="inputProductType" class="form-label">Categoría</label>
-                                      <select class="form-select" name="category" id="inputProductType">
-                                        <option value="">Seleccione</option>
-                                        @foreach($categories as $category)
-                                          <option value="{{ $category->id }}" {{ (old('category') == $category->id) ? "selected" : "" }}>{{ $category->name }}</option>
-                                        @endforeach
-                                      </select>
+                                      <div class="select-group overflow-hidden">
+                                        <select class="form-select" name="category[]" id="inputCategories">
+                                          <option value="">Seleccione</option>
+                                          @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" {{ (collect(old('category'))->contains($category->id)) ? "selected" : "" }}>{{ $category->name }}</option>
+                                          @endforeach
+                                        </select>
+                                      </div>
                                       {!! $errors->first('category', '<div class="error error-block">:message</div>') !!}
-                                      <a href="javascript:void(0)" class="form-label mt-1">+ Agregar</a>
+                                      <a href="javascript:void(0)" class="form-label mt-1 clone-btn">+ Agregar</a>
                                     </div>
                                     <div class="col-12 mt-5">
                                         <div class="d-grid">

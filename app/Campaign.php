@@ -26,19 +26,19 @@ class Campaign extends Model
         'deleted_at',
     ];
 
-    public function productManager()
+    public function categories()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(Category::class, 'pivot_campaign_categories', 'campaign_id', 'category_id');
+    }
+
+    public function productManagers()
+    {
+        return $this->belongsToMany(User::class, 'pivot_campaign_product_managers', 'campaign_id', 'product_manager_id');
     }
 
     public function status()
     {
         return $this->belongsTo(Status::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
     }
 
     public function files()
