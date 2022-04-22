@@ -14,6 +14,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@home')->name('front_home');
+Route::get('/positioning', 'FrontController@positioning')->name('positioning');
+
+
+// Our Brand
+Route::get('/our-brand', 'FrontController@ourBrand')->name('our-brand');
+Route::group(['prefix' => 'our-brand'], function() {
+    Route::get('/logo', 'FrontController@ourBrandLogo')->name('our-brand-logo');
+    Route::get('/color', 'FrontController@ourBrandColor')->name('our-brand-color');
+    Route::get('/image', 'FrontController@ourBrandImage')->name('our-brand-image');
+    Route::get('/uses', 'FrontController@ourBrandUses')->name('our-brand-uses');
+    Route::get('/type', 'FrontController@ourBrandType')->name('our-brand-type');
+});
+
+// Easy.cl
+Route::get('/easycl', 'FrontController@easycl')->name('easycl');
+Route::group(['prefix' => 'easycl'], function() {
+    Route::get('/logo', 'FrontController@easyclLogo')->name('easycl-logo');
+    Route::get('/color', 'FrontController@easyclColor')->name('easycl-color');
+    Route::get('/uses', 'FrontController@easyclUses')->name('easycl-uses');
+});
+
+// Expert
+Route::get('/expert', 'FrontController@expert')->name('expert');
+Route::group(['prefix' => 'expert'], function() {
+    Route::get('/logo', 'FrontController@expertLogo')->name('expert-logo');
+    Route::get('/color', 'FrontController@expertColor')->name('expert-color');
+    Route::get('/image', 'FrontController@expertImage')->name('expert-image');
+    Route::get('/uses', 'FrontController@expertUses')->name('expert-uses');
+    Route::get('/type', 'FrontController@expertType')->name('expert-type');
+});
+
+
+
+Route::get('/institutional-marketing', 'FrontController@institutional_marketing')->name('institutional-marketing');
+Route::get('/endomarketing', 'FrontController@endoMarketing')->name('endomarketing');
+Route::get('/graphic-resources', 'FrontController@graphicResources')->name('graphic-resources');
+Route::get('/login', 'FrontController@login')->name('login');
+
 
 Route::group(['prefix' => 'administrator'], function() {
     Route::get('/login', 'AdminController@login')->name('admin_login');
