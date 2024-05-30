@@ -10,6 +10,15 @@ class FrontController extends Controller
         return view("front.index");
     }
 
+    public function ourManifest() {
+        return view("front.our-manifest");
+    }
+	
+	
+    public function ourPurpose() {
+        return view("front.our-purpose");
+    }
+
     // OUR BRAND
     public function ourBrand() {
         return view("front.our-brand");
@@ -28,6 +37,12 @@ class FrontController extends Controller
     }
     public function ourBrandType() {
         return view("front.our-brand.type");
+    }
+    public function ourEasycl() {
+        return view("front.our-brand.easycl");
+    }
+	public function coBranding() {
+        return view("front.our-brand.cobranding");
     }
     // END OUR BRAND
 
@@ -65,6 +80,12 @@ class FrontController extends Controller
     }
     public function expertType() {
         return view("front.expert.type");
+    }
+    public function expertBackground() {
+        return view("front.expert.background");
+    }
+    public function expertCategory() {
+        return view("front.expert.category");
     }
     // END EXPERT
 

@@ -1,6 +1,8 @@
 @extends('front.layout.master')
 
 @section('content')
+
+
     <div class="page">
         <div class="banner banner--image">
             <div class="banner__container">

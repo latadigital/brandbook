@@ -14,8 +14,28 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Send Requests To Front Controller...
+    # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Security Headers
+    # Suprime el encabezado X-Powered-By
+    Header always unset X-Powered-By
+	#Header unset X-Powered-By
+
+    # Establece la política de seguridad de transporte estricto (HSTS)
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # Prevención de MIME Sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Protección contra clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Protección contra XSS
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy
+    Header set Referrer-Policy "no-referrer-when-downgrade"
 </IfModule>

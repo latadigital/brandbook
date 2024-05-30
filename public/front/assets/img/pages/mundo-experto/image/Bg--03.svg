@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="320" viewBox="0 0 600 320">
+  <defs>
+    <clipPath id="clip-Bg_03">
+      <rect width="600" height="320"/>
+    </clipPath>
+  </defs>
+  <g id="Bg_03" data-name="Bg—03" clip-path="url(#clip-Bg_03)">
+    <rect width="600" height="320" fill="#fff"/>
+    <rect id="Rectángulo_5" data-name="Rectángulo 5" width="600" height="320" fill="#1c1c1c"/>
+    <path id="Trazado_12" data-name="Trazado 12" d="M590.382,208,449.766,387.459V208Z" transform="translate(-449.766 -208)" fill="#de0e17"/>
+    <path id="Trazado_13" data-name="Trazado 13" d="M140.616,0,0,179.459V0Z" transform="translate(600 320) rotate(180)" fill="#de0e17"/>
+    <path id="Trazado_18" data-name="Trazado 18" d="M529.342,208,449.766,308.456V208Z" transform="translate(-449.766 -208)" fill="#ad1717"/>
+    <path id="Trazado_19" data-name="Trazado 19" d="M79.576,0,0,100.456V0Z" transform="translate(600 320) rotate(180)" fill="#ad1717"/>
+  </g>
+</svg>

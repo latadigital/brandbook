@@ -8,7 +8,7 @@
 					<div class="banner__content">
 						<div class="banner__icons banner__icons--secondary icons icons--white observe"></div>
 						<h1 class="banner__title observe" data-observe-animation="fadeInDown" data-observe-duration="500">Usos</h1>
-						<p class="banner__desc observe" data-observe-animation="fadeInRight" data-observe-duration="500">Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar dictum molestie suscipit volutpat metus id, nulla fringilla ullamcorper sapien posuere class erat mus senectus habitasse ornare ac.</p>
+						<p class="banner__desc observe" data-observe-animation="fadeInRight" data-observe-duration="500">Debemos ser fieles al buen uso de los recursos de la marca, por lo que a continuación dejamos algunos aspectos obligatorios sobre el uso de nuestro logotipo en diferentes versiones.</p>
 					</div>
 					<div class="banner__image observe" data-observe-animation="fadeInRight">
 						<div class="banner__image__cover"><img class="image lozad image--cover image--block image--width-full image--height-full" alt="Usos" title="Usos" data-src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/banners/nuestra-marca--usos.jpg" /></div>
@@ -52,6 +52,39 @@
 								<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
 									<p>Cuando el imagotipo prisme más grande, debe dejarse un margen arriba y abajo, centrando la palabra “easy”. Cencosud desaparece.</p><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/02-02.svg" alt="Cuando el imagotipo prisme más grande, debe dejarse un margen arriba y abajo, centrando la palabra “easy”. Cencosud desaparece." />
 								</div>
+								<div class="space--3"></div>
+							</div>
+							<div class="content__item">
+								<h3>Cartones de cierre RRSS</h3>
+								<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
+									<p>En formato Redes Sociales, la marca siempre debe cerrar de la misma manera, sin el claim tiendas/online para su mejor lectura en pantallas móviles. Tanto para formato vertical como para formato cuadrado. El imagotipo y textos se posicionan en el centro de la pantalla. Debe respetarse este tamaño, dejando aire alrededor.
+
+									</p>
+									<div class="row">
+										<div class="col-xs-12 col-md-12">
+											<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
+												<img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/Version-Cierre-Stories-RRSS--01a.png" alt="" /></div>
+											<div class="space--3"></div>
+										</div>
+									</div>
+								</div>
+								<div class="content__item">
+									<h3> Cartones de cierre otros medios digitales y masivos:</h3>
+									<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
+										<p>
+											En formato digital (exceptuando redes sociales), la marca siempre debe cerrar de la misma manera, con el claim tiendas online a menos que sea un formato muy reducido y no tengamos buena lectura. El imagotipo y textos se posicionan en el centro de la pantalla. Debe respetarse este tamaño, dejando aire alrededor. Aplicable a formatos verticales, horizontales y cuadrados.
+										</p>
+										<div class="row">
+											<div class="col-xs-12 col-md-12">
+												<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
+													<img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/Version-Cierre-Vertical-Horizontal-Cuadrado-Medios--01a.png" alt="" /></div>
+												<div class="space--3"></div>
+											</div>
+										</div>
+									</div>
+								<!-- <div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500">
+									<p>Cuando el imagotipo prisme más grande, debe dejarse un margen arriba y abajo, centrando la palabra “easy”. Cencosud desaparece.</p><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/02-02.svg" alt="Cuando el imagotipo prisme más grande, debe dejarse un margen arriba y abajo, centrando la palabra “easy”. Cencosud desaparece." />
+								</div> -->
 								<div class="space--3"></div>
 							</div>
 							<div class="content__item content--color-box">
@@ -187,11 +220,81 @@
 								</div>
 								<p>No ubicar la marca sobre imágenes con mucha información. La idea es elegir los sectores más limpios dentro de una imagen y así asegurar el correcto reconocimiento de la marca.</p>
 							</div>
+							<!-- <div class="content__item">
+								<h3>Co-Branding</h3>
+								<p>Se establecen proporciones y relaciones de convivencia de marcas que deberán ser respetadas para la correcta aplicación del logo Easy.</p>
+								<p>Se debe tener en cuenta cuál de estas proporciones aplica de mejor forma en cada situación de Co-Branding y se debe evaluar de forma separada casos particulares. Se deberá resperar el área de seguridad del logo Easy.</p>
+							</div> -->
+							<!-- <div class="content__item">
+								<p>Convivencia de la marca con otras unidades de negocio</p>
+								<div class="row">
+									
+									<div class="col-xs-12 col-md-12">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/co--brand--01.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+								</div>
+							</div> -->
+							<!-- <div class="content__item">
+								<p>Ubicación de izquerda a derecha.</p>
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-01.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-02.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-03.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+								</div>
+							</div> -->
+							<!-- <div class="content__item">
+								<p>Ubicación de abajo hacia arriba cerrando.</p>
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-04.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-05.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/usos/nuestra-marca/co-branding-06.svg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+								</div>
+							</div> -->
+							<!-- <div class="content__item">
+								<p>Definición con proveedores</p>
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/Co-BrandProveedoresElectro.jpg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/Co-BrandProveedoresIluminacio%CC%81n.jpg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/Co-BrandProveedoresPinturas.jpg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="500"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/Co-BrandProveedoresTerapia.jpg" alt="" /></div>
+										<div class="space--3"></div>
+									</div>
+								</div>
+							</div> -->
 						</div>
 						<div class="download-cta observe" data-observe-animation="fadeInUp" data-observe-duration="500">
 							<div class="download-cta__icons download-cta__icons--1 icons icons--gray"></div>
 							<div class="download-cta__content">
-								<h3 class="download-cta__title">Descarga de Recursos</h3><a class="download-cta__btn btn btn--primario" href="/recursos-graficos.html">Ir a las Descargas</a>
+								<h3 class="download-cta__title">Descarga de Recursos</h3><a class="download-cta__btn btn btn--primario" href="{{ route('graphic-resources') }}">Ir a las Descargas</a>
 							</div>
 							<div class="download-cta__icons download-cta__icons--2 icons icons--gray"></div>
 						</div>
@@ -199,7 +302,5 @@
 				</div>
 			</div>
 		</div>
-       
-   
-
+	</div>
 @endsection

@@ -9,7 +9,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Satisfy&display=swap" rel="stylesheet">
 		<title>Brand Book Easy | Login</title>
-		<link href="{{ asset('front/assets/css/main.6d5b65e701a2eeecb047.css') }}" rel="stylesheet">
+		<link href="{{ asset('front/assets/css/main.981122a80bcde022e257.css') }}" rel="stylesheet">
 	</head>
 
 	<body>
@@ -33,7 +33,7 @@
 
 					{{ Form::open(array('route' => 'admin_login_validate', 'class'=>'form', 'method' => 'post')) }}
 					<!-- <form class="form" id="login"> -->
-						<div class="form__group">
+						<!--<div class="form__group">
 							<input class="form__input" type="email" name="email" id="inputEmailAddress" placeholder="email@email.cl" required="required" value="{{ old('email') }}"/>
 							<label class="form__label" for="email">Email</label>
 							{!! $errors->first('email', '<div class="error error-block">:message</div>') !!}
@@ -45,16 +45,17 @@
 						</div>
 						<div class="text-align-right-xs"><a class="link" href="/recuperar.html">¿Olvidaste tu contraseña?</a>
 							<div class="space--3"></div>
-						</div>
-						<div class="text-align-right-xs"><button class="btn btn--primario">Ingresar</button></div>
+						</div>-->
+					<div class="text-align-right-xs"><a class="btn btn--primario" href="https://brandbook.easy.cl/saml2/94c423c1-76eb-4635-bfb3-e0011722b032/login?returnTo=https://brandbook.easy.cl/">Ingresar con Easy</a></div>
+						<!--<div class="text-align-right-xs"><button class="btn btn--primario">Ingresar</button></div>-->
 					<!-- </form> -->
 					{{ Form::close() }}
 
 
-					<p>¿No estás registrado? <a class="link" href="/registro.html">Registrarse</a></p>
+
 					<div class="space--6"></div>
 					<footer class="access-page__footer">
-						<p><small>© 2017 | Easy todos los derechos reservados</small></p>
+						<p><small>© 2022 | Easy todos los derechos reservados</small></p>
 					</footer>
 				</div>
 				<div class="access-page__banner">
@@ -66,7 +67,8 @@
 				</div>
 			</div>
 		</div>
-		<script defer src="{{ asset('front/assets/js/main.6d5b65e701a2eeecb047.js') }}"></script> 
+		<script src="{{ asset('front/assets/js/main.981122a80bcde022e257.js') }}" nonce="{{ request()->headers->get('X-CSP-Nonce') }}" defer></script>
+
 	</body>
 
 </html>

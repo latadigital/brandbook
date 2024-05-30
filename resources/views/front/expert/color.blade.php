@@ -59,6 +59,49 @@
 								</div>
 							</div>
 						</div>
+						<div class="content">
+							<div class="color-box__container">
+								<h2>Colores Categorías</h2>
+								<div class="row">
+									<div class="col-xs-12 col-md-4">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="600">
+											<div class="color-box" style="background-color:#B74B17;color:#fff">
+												<div class="color-box__values">
+													<div class="color-box__values__item">Bronce</div>
+													<div class="color-box__values__item">C:20 M:78 Y:100 </div>
+													<div class="color-box__values__item">K:12 R:183 G:75 B:23</div>
+													<div class="color-box__values__item">HEX: b74b17</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="600">
+											<div class="color-box" style="background-color:#AAAAAA;color:#000">
+												<div class="color-box__values">
+													<div class="color-box__values__item">Plata</div>
+													<div class="color-box__values__item">C:50 M:40 Y:39 K:22</div>
+													<div class="color-box__values__item">R:124 G:124 B:125</div>
+													<div class="color-box__values__item">HEX: 7c7c7d</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<div class="observe" data-observe-animation="fadeInUp" data-observe-duration="600">
+											<div class="color-box" style="background-color:#D7A016;color:#000">
+												<div class="color-box__values">
+													<div class="color-box__values__item">Oro</div>
+													<div class="color-box__values__item">C:15 M:37 Y:96 K:4</div>
+													<div class="color-box__values__item">R:215 G:160 B:22</div>
+													<div class="color-box__values__item">HEX: d7a016</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

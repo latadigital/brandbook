@@ -1,8 +1,9 @@
+
 @extends('front.layout.master')
 
 @section('content')
        
-<div class="page">
+	<div class="page">
 			<div class="banner banner--image">
 				<div class="banner__container">
 					<div class="banner__content">
@@ -29,9 +30,16 @@
 					<div class="col-xs-12 col-lg-3">
 						@include('front.our-brand.sidemenu')  
 					</div>
-					<div class="col-xs-12 col-lg-9">
+					<div class="col-xs-12 col-lg-9 preview__title">
 						<div class="content">
-							<h3>Roboto</h3>
+							<h3>
+							Roboto
+								<a href="{{ asset('/front/assets/types/Roboto.zip') }}" download>
+									<span>
+										<img src="{{ asset('/front/assets/img/dowload.svg') }}" alt="">
+									</span>
+								</a>
+						</h3>
 							<p>La tipografía corporativa principal es la Roboto. Se usa para todos los textos generales de la marca y en todas sus variaciones según lo amerite.</p>
 							<div class="preview font-preview" style="font-family:Roboto">
 								<div class="preview__header">
@@ -48,8 +56,8 @@
 									<div class="preview__variations">
 										<div class="preview__variations__item form__group preview__variations__item--size" style="width:90px">
 											<div class="form__icon"><select class="form__input">
-													<option value="1">1x</option>
-													<option value="2" selected="selected">2x</option>
+													<option value="1" selected="selected">1x</option>
+													<option value="2">2x</option>
 													<option value="3">3x</option>
 												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Tamaño</label>
 										</div>
@@ -73,7 +81,64 @@
 									</div><input class="preview__custom" type="text" placeholder="Escribe algo aquí para probar Roboto" />
 								</div>
 							</div>
-							<h3>Simplon BP</h3>
+							<h3>
+							Roboto Slab 
+								<a href="{{ asset('/front/assets/types/Roboto_Slab.zip') }}" download>
+									<span>
+										<img src="{{ asset('/front/assets/img/dowload.svg') }}" alt="">
+									</span>
+								</a>
+							</h3>
+							<p>La tipografía corporativa principal es la Roboto Slab. Se usa para todos los textos generales de la marca y en todas sus variaciones según lo amerite.</p>
+							<div class="preview font-preview" style="font-family:Roboto Slab">
+								<div class="preview__header">
+									<div class="preview__color-selector">
+										<div class="preview__color-selector__label">Background</div>
+										<div class="preview__color-selector__items">
+											<div class="preview__color-selector__item active" style="background:#2e2e36" data-scheme="dark" data-background="#2E2E36"></div>
+											<div class="preview__color-selector__item" style="background:#e00111" data-scheme="dark" data-background="#E00111"></div>
+											<div class="preview__color-selector__item" style="background:#ffef00" data-scheme="light" data-background="#FFEF00"></div>
+											<div class="preview__color-selector__item" style="background:#f6f6f6" data-scheme="light" data-background="#F6F6F6"></div>
+											<div class="preview__color-selector__item" style="background:#fff" data-scheme="light" data-background="#FFFFFF"></div>
+										</div>
+									</div>
+									<div class="preview__variations">
+										<div class="preview__variations__item form__group preview__variations__item--size" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="1" selected="selected">1x</option>
+													<option value="2">2x</option>
+													<option value="3">3x</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Tamaño</label>
+										</div>
+										<div class="preview__variations__item form__group preview__variations__item--weight" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="300">300</option>
+													<option value="400" selected="selected">400</option>
+													<option value="600">600</option>
+													<option value="700">700</option>
+													<option value="800">800</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Peso</label>
+										</div>
+									</div>
+								</div>
+								<div class="preview__body">
+									<div class="preview__area" style="background:#2e2e36">
+										<div class="preview__area__item">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</div>
+										<div class="preview__area__item">abcdefghijklmnñopqrstuvwxyz</div>
+										<div class="preview__area__item">0123456789</div>
+										<div class="preview__area__item preview__area__item--preview" style="display:none"></div>
+									</div><input class="preview__custom" type="text" placeholder="Escribe algo aquí para probar Roboto Slab" />
+								</div>
+							</div>
+							
+							<h3>
+								Simplon BP 
+								<a href="{{ asset('/front/assets/types/Simplon[4396].zip') }}" download>
+									<span>
+										<img src="{{ asset('/front/assets/img/dowload.svg') }}" alt="">
+									</span>
+								</a>
+							</h3>
 							<p>La tipografía complementaria es la Simplon Norm. Se usa para escribir el cierre institucional de la marca, bajadas de texto online y textos en catálogos. Puede convivir con la tipografía principal Roboto.</p>
 							<div class="preview font-preview" style="font-family:Simplon BP">
 								<div class="preview__header">
@@ -90,8 +155,8 @@
 									<div class="preview__variations">
 										<div class="preview__variations__item form__group preview__variations__item--size" style="width:90px">
 											<div class="form__icon"><select class="form__input">
-													<option value="1">1x</option>
-													<option value="2" selected="selected">2x</option>
+													<option value="1" selected="selected">1x</option>
+													<option value="2">2x</option>
 													<option value="3">3x</option>
 												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Tamaño</label>
 										</div>
@@ -112,6 +177,105 @@
 										<div class="preview__area__item">0123456789</div>
 										<div class="preview__area__item preview__area__item--preview" style="display:none"></div>
 									</div><input class="preview__custom" type="text" placeholder="Escribe algo aquí para probar Simplon BP" />
+								</div>
+							</div>
+							<h3>
+								ITC Aavant
+								<a href="{{ asset('/front/assets/types/ITC Avant Garde Pro.zip') }}" download>
+									<span>
+										<img src="{{ asset('/front/assets/img/dowload.svg') }}" alt="">
+									</span>
+								</a>
+							</h3>
+							
+							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, lacus leo tempor feugiat aptent auctor condimentum, risus habitant nam vitae bibendum vivamus. </p>
+							<div class="preview font-preview" style="font-family:ITC Aavant">
+								<div class="preview__header">
+									<div class="preview__color-selector">
+										<div class="preview__color-selector__label">Background</div>
+										<div class="preview__color-selector__items">
+											<div class="preview__color-selector__item active" style="background:#f6f6f6" data-scheme="light" data-background="#F6F6F6"></div>
+											<div class="preview__color-selector__item" style="background:#ffef00" data-scheme="light" data-background="#FFEF00"></div>
+											<div class="preview__color-selector__item" style="background:#e00111" data-scheme="dark" data-background="#E00111"></div>
+											<div class="preview__color-selector__item" style="background:#2e2e36" data-scheme="dark" data-background="#2E2E36"></div>
+											<div class="preview__color-selector__item" style="background:#f6f6f6" data-scheme="light" data-background="#F6F6F6"></div>
+											<div class="preview__color-selector__item" style="background:#fff" data-scheme="light" data-background="#FFFFFF"></div>
+										</div>
+									</div>
+									<div class="preview__variations">
+										<div class="preview__variations__item form__group preview__variations__item--size" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="1" selected="selected">1x</option>
+													<option value="2">2x</option>
+													<option value="3">3x</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Tamaño</label>
+										</div>
+										<div class="preview__variations__item form__group preview__variations__item--weight" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="300">300</option>
+													<option value="400" selected="selected">400</option>
+													<option value="600">600</option>
+													<option value="700">700</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Peso</label>
+										</div>
+									</div>
+								</div>
+								<div class="preview__body">
+									<div class="preview__area" style="background:#e00111">
+										<div class="preview__area__item">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</div>
+										<div class="preview__area__item">abcdefghijklmnñopqrstuvwxyz</div>
+										<div class="preview__area__item">0123456789</div>
+										<div class="preview__area__item preview__area__item--preview" style="display:none"></div>
+									</div><input class="preview__custom" type="text" placeholder="Escribe algo aquí para probar ITC Aavant" />
+								</div>
+							</div>
+							<h3>
+								ASAP
+								<a href="{{ asset('/front/assets/types/Asap.zip') }}" download>
+									<span>
+										<img src="{{ asset('/front/assets/img/dowload.svg') }}" alt="">
+									</span>
+								</a>
+							</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, lacus leo tempor feugiat aptent auctor condimentum, risus habitant nam vitae bibendum vivamus. </p>
+							 <div class="preview font-preview" style="font-family:Lato,sans-serif">
+								<div class="preview__header">
+									<div class="preview__color-selector">
+										<div class="preview__color-selector__label">Background</div>
+										<div class="preview__color-selector__items">
+											<div class="preview__color-selector__item active" style="background:#f6f6f6" data-scheme="light" data-background="#F6F6F6"></div>
+											<div class="preview__color-selector__item" style="background:#ffef00" data-scheme="light" data-background="#FFEF00"></div>
+											<div class="preview__color-selector__item" style="background:#e00111" data-scheme="dark" data-background="#E00111"></div>
+											<div class="preview__color-selector__item" style="background:#2e2e36" data-scheme="dark" data-background="#2E2E36"></div>
+											<div class="preview__color-selector__item" style="background:#f6f6f6" data-scheme="light" data-background="#F6F6F6"></div>
+											<div class="preview__color-selector__item" style="background:#fff" data-scheme="light" data-background="#FFFFFF"></div>
+										</div>
+									</div>
+									<div class="preview__variations">
+										<div class="preview__variations__item form__group preview__variations__item--size" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="1" selected="selected">1x</option>
+													<option value="2">2x</option>
+													<option value="3">3x</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Tamaño</label>
+										</div>
+										<div class="preview__variations__item form__group preview__variations__item--weight" style="width:90px">
+											<div class="form__icon"><select class="form__input">
+													<option value="300">300</option>
+													<option value="400" selected="selected">400</option>
+													<option value="600">600</option>
+													<option value="700">700</option>
+												</select><span class="form__icon__item"><i class="fa fa-chevron-down"></i></span></div><label class="form__label">Peso</label>
+										</div>
+									</div>
+								</div>
+								<div class="preview__body">
+									<div class="preview__area" style="background:#e00111">
+										<div class="preview__area__item">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</div>
+										<div class="preview__area__item">abcdefghijklmnñopqrstuvwxyz</div>
+										<div class="preview__area__item">0123456789</div>
+										<div class="preview__area__item preview__area__item--preview" style="display:none"></div>
+									</div><input class="preview__custom" type="text" placeholder="Escribe algo aquí para probar Asap" />
 								</div>
 							</div>
 						</div>

@@ -28,6 +28,10 @@
                         <img class="pagemenu__link__icon" src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/icons/mundo-experto/logotipo.svg" alt="Logotipo" />
                         <div class="pagemenu__link__label">Logotipo</div>
                     </a>
+                    <a class="pagemenu__link observe" href="{{ route('expert-category') }}" title="Logotipo" data-observe-animation="fadeInUp" data-observe-delay="400">
+                        <img class="pagemenu__link__icon" src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/icons/mundo-experto/category.svg" alt="Logotipo" />
+                        <div class="pagemenu__link__label">Categorias</div>
+                    </a>
                     <a class="pagemenu__link observe" href="{{ route('expert-color') }}" title="Color" data-observe-animation="fadeInUp" data-observe-delay="600">
                         <img class="pagemenu__link__icon" src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/icons/mundo-experto/color.svg" alt="Color" />
                         <div class="pagemenu__link__label">Color</div>

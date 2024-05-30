@@ -16,8 +16,8 @@ use App\File;
 use Auth;
 use Route;
 
-define("ADMIN_ROLE_ID", 1);
-define("CLIENT_ROLE_ID", 2);
+define("ADMIN_ROLE_ID_", 1);
+define("CLIENT_ROLE_ID_", 2);
 
 define("PATH_STORAGE_CAMPAIGNS", "campaigns");
 
@@ -35,7 +35,7 @@ class AdminController extends Controller
             return redirect()->route('admin_login')->with('message', 'Email y/o password son inválidos');
         }
         $redirect = 'front_home';
-        if (Auth::user()->role_id == ADMIN_ROLE_ID) {
+        if (Auth::user()->role_id == ADMIN_ROLE_ID_) {
             $redirect = 'admin_dashboard';
         }
         return redirect()->route($redirect);
@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function logout() {
         Auth::logout();
-        return redirect()->route('admin_login');
+        return redirect()->route('front_home');
     }
 
     public function dashboard() {

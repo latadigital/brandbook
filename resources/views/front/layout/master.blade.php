@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Brand Book Easy | Inicio</title>
+    <link rel="icon" type="image/x-icon" href="https://easycl.vteximg.com.br/arquivos/favicon.ico">
     <meta name="description" content="Este Brandbook es una herramienta que nos garantiza y ayuda a tener una consistencia en el uso y lenguaje de la marca Easy en todos sus aspectos conceptuales, verbales y visuales." />
     <link rel="canonical" href="https://brandbook.easy.cl/" />
     <meta property="og:title" content="Brand Book Easy | Inicio" />
     <meta property="og:description" content="Este Brandbook es una herramienta que nos garantiza y ayuda a tener una consistencia en el uso y lenguaje de la marca Easy en todos sus aspectos conceptuales, verbales y visuales." />
     <meta property="og:url" content="https://brandbook.easy.cl/" />
     <meta property="og:image" content="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/meta-images/default.jpg" />
-    <link href="{{ asset('front/assets/css/main.6d5b65e701a2eeecb047.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/assets/css/main.981122a80bcde022e257.css') }}" rel="stylesheet">
+    <script src="{{ asset('front/assets/js/paper.js') }}"></script>
    
 </head>
 <body>
@@ -48,6 +50,7 @@
         <div class="fixed-btns__btn fixed-btns__btn--reveal fixed-btns__btn--tertiary to-top scroll-reveal" data-scroll-reveal-top="500"><i class="fa fa-chevron-up"></i></div>
         <div class="fixed-btns__btn fixed-btns__btn--primary float-info--open"><i class="fa fa-info"></i></div>
     </div>
-    <script defer src="{{ asset('front/assets/js/main.6d5b65e701a2eeecb047.js') }}"></script> 
+	<!--<script defer src="{{ asset('front/assets/js/swiper.js') }}"></script> -->
+    <script defer src="{{ asset('front/assets/js/main.981122a80bcde022e257.js') }}"></script> 
 </body>
 </html>

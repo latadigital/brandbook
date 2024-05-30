@@ -13,7 +13,7 @@ use App\User;
 use App\Category;
 use App\File;
 
-define("PRODUCT_MANAGER_ROLE_ID", 3);
+define("PRODUCT_MANAGER_ROLE_ID_", 3);
 define("BASE_URL_CAMPAIGN_EASY", "https://easy.cl/tienda/");
 
 class CampaignController extends Controller
@@ -44,7 +44,7 @@ class CampaignController extends Controller
     public function createCampaign()
     {
       $statuses = Status::all();
-      $productManagers = User::where("role_id", PRODUCT_MANAGER_ROLE_ID)->where("active", true)->get();
+      $productManagers = User::where("role_id", PRODUCT_MANAGER_ROLE_ID_)->where("active", true)->get();
       $categories = Category::all();
       $output = [
         "statuses" => $statuses,
@@ -106,7 +106,7 @@ class CampaignController extends Controller
         return redirect()->route('admin_campaign');
       }
       $statuses = Status::all();
-      $productManagers = User::where("role_id", PRODUCT_MANAGER_ROLE_ID)->where("active", true)->get();
+      $productManagers = User::where("role_id", PRODUCT_MANAGER_ROLE_ID_)->where("active", true)->get();
       $categories = Category::all();
       $output = [
         "campaign" => $campaign,

@@ -60,25 +60,32 @@
                             </div>
                         </div>
                         <div class="content__item content--evolution">
-                            <h3>Evolución</h3>
-                            <div class="logo-evolution swiper swiper--evolution">
-                                <div class="swiper-wrapper">
-                                    <div class="logo-evolution__item swiper-slide">
-                                        <div class="logo-evolution__logo"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logo--1--easy.svg" /></div>
-                                        <div class="logo-evolution__label">1993</div>
-                                    </div>
-                                    <div class="logo-evolution__item swiper-slide">
-                                        <div class="logo-evolution__logo"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logo--2--easy.svg" /></div>
-                                        <div class="logo-evolution__label">2005</div>
-                                    </div>
-                                    <div class="logo-evolution__item swiper-slide">
-                                        <div class="logo-evolution__logo"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logos/easy-logo--shadow.svg" /></div>
-                                        <div class="logo-evolution__label">2011</div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
+							<h3>Evolución</h3>
+							<div class="logo-evolution swiper swiper--evolution">
+								<div class="swiper-wrapper">
+									<div class="logo-evolution__item swiper-slide">
+										<div class="logo-evolution__logo"><img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logo--1--easy.svg" /></div>
+										<div class="logo-evolution__tape"></div>
+										<div class="logo-evolution__label">1993</div>
+									</div>
+									<div class="logo-evolution__item swiper-slide">
+										<div class="logo-evolution__logo">
+											<img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logo--2--easy.svg" />
+										</div>
+										<div class="logo-evolution__tape"></div>
+										<div class="logo-evolution__label">2005</div>
+									</div>
+									<div class="logo-evolution__item swiper-slide">
+										<div class="logo-evolution__logo">
+											<img src="https://easy--brandbook.s3.us-west-2.amazonaws.com/img/logos/easy-logo--shadow.svg" />
+										</div>
+										<div class="logo-evolution__tape"></div>
+										<div class="logo-evolution__label">2011</div>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
                         <div class="content__item content--choices">
                             <h3>Tamaño Mínimo</h3>
                             <p>El tamaño mínimo de aplicación es una medida de seguridad que se debe tomar para garantizar una correcta visualización de nuestra marca.</p>
@@ -110,7 +117,7 @@
                     <div class="download-cta observe" data-observe-animation="fadeInUp" data-observe-duration="500">
                         <div class="download-cta__icons download-cta__icons--1 icons icons--gray"></div>
                         <div class="download-cta__content">
-                            <h3 class="download-cta__title">Descarga de Recursos</h3><a class="download-cta__btn btn btn--primario" href="/recursos-graficos.html">Ir a las Descargas</a>
+                            <h3 class="download-cta__title">Descarga de Recursos</h3><a class="download-cta__btn btn btn--primario" href="{{ route('graphic-resources') }}">Ir a las Descargas</a>
                         </div>
                         <div class="download-cta__icons download-cta__icons--2 icons icons--gray"></div>
                     </div>

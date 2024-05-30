@@ -21,6 +21,10 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+		\App\Http\Middleware\ValidateHostHeader::class,
+		\App\Http\Middleware\ContentSecurityPolicy::class,
+		\App\Http\Middleware\FrameHeaders::class,
+		\App\Http\Middleware\RemoveXPoweredByHeader::class,
     ];
 
     /**
@@ -36,13 +40,19 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
+            'cache.headers:private;max_age=0;etag=false',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'api' => [
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        ],
+	],
+	'saml' => [
+	    \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+	    \Illuminate\Session\Middleware\StartSession::class,
+	]
     ];
 
     /**
